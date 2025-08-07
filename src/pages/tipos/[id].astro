@@ -1,0 +1,19 @@
+---
+import BasicLayout from "../../layouts/BasicLayout.astro"
+import { getCollection, render } from "astro:content"
+
+export async function getStaticPaths() {
+  const allTypes = await getCollection("tipos")
+  return allTypes.map((type) => ({
+    params: { id: type.id },
+    props: { type },
+  }))
+}
+const { type } = Astro.props
+const { Content } = await render(type)
+---
+
+<BasicLayout title={type.data.nome}>
+  <h1>tipo / {type.data.nome}</h1>
+  <Content />
+</BasicLayout>
