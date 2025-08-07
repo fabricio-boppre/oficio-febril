@@ -1,7 +1,26 @@
 ---
 import BasicLayout from "../layouts/BasicLayout.astro"
+import { getCollection } from "astro:content"
+
+const allEvents = await getCollection("eventos")
+console.log(allEvents)
 ---
 
 <BasicLayout title="eventos">
   <h1>eventos</h1>
+  <div class="indexList">
+    {
+      allEvents.map((event) => (
+        <div class="indexListItem">
+          <a href={`/eventos/${event.id}`}>
+            <img
+              src={event.data.imagem_ilustrativa.src}
+              alt={event.data.nome}
+            />
+            <span>{event.data.nome}</span>
+          </a>
+        </div>
+      ))
+    }
+  </div>
 </BasicLayout>

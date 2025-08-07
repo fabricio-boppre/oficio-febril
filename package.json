@@ -3,13 +3,15 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.12.8"
+    "@astrojs/mdx": "^4.3.3",
+    "astro": "^5.12.8",
+    "sass": "^1.90.0"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
