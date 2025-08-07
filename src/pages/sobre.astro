@@ -1,0 +1,27 @@
+---
+import BasicLayout from "../layouts/BasicLayout.astro"
+import { Content as Sobre } from "../content/sobre.mdx"
+---
+
+<BasicLayout title="sobre">
+  <h1>sobre</h1>
+  <Sobre />
+</BasicLayout>
+
+<style lang="scss">
+  .indexListImages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    .indexListItem {
+      width: 200px;
+      a {
+        text-decoration: none;
+        color: black !important;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+</style>
