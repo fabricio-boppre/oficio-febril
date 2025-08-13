@@ -4,52 +4,28 @@ import BasicLayout from "../../layouts/BasicLayout.astro"
 
 <BasicLayout title="Adicionar tipo">
   <h1>tipos / Adicionar</h1>
-  <div class="columns container my-2">
-    <div class="field">
-      <label class="label" for="nome">Nome</label>
-      <div class="control">
-        <input id="nome" name="nome" class="input" type="text" />
-      </div>
-    </div>
+  <form>
+    <label for="nome">Nome</label>
+    <input id="nome" name="nome" type="text" />
 
-    <div class="field">
-      <label class="label" for="slug">Slug</label>
-      <div class="control">
-        <input id="slug" name="slug" class="input" type="text" />
-      </div>
-    </div>
+    <label for="slug">Slug</label>
+    <span>
+      Versão slug do nome do tipo, para ser utilizada no endereço de sua tela.
+    </span>
+    <input id="slug" name="slug" type="text" />
 
-    <div class="field">
-      <label class="label" for="data_de_publicacao">Data de publicação</label>
-      <div class="control">
-        <input
-          type="date"
-          id="data_de_publicacao"
-          class="input"
-          name="data_de_publicacao"
-        />
-      </div>
-    </div>
+    <label for="data_de_publicacao">Data de publicação</label>
+    <input type="date" id="data_de_publicacao" name="data_de_publicacao" />
 
-    <div class="field">
-      <label class="label" for="descricao">Descrição</label>
-      <div class="control">
-        <input id="descricao" name="descricao" class="input" type="text" />
-      </div>
-    </div>
+    <label for="descricao">Descrição</label>
+    <input id="descricao" name="descricao" type="text" class="bigger" />
 
-    <div class="field">
-      <label class="label" for="content">Conteúdo</label>
-      <div class="control">
-        <textarea id="content" name="content" class="textarea"></textarea>
-      </div>
-    </div>
+    <label for="content">Conteúdo</label>
+    <textarea id="content" name="content" class="textarea"></textarea>
 
     <!-- Prepare the JavaScript function for later -->
-    <div class="control">
-      <button id="submit-content">Enviar</button>
-    </div>
-  </div>
+    <button id="submit-content">Enviar</button>
+  </form>
 </BasicLayout>
 
 <script>
@@ -116,3 +92,39 @@ ${content}`
     window.open(githubQueryLink)
   }
 </script>
+
+<style lang="scss">
+  form {
+    label,
+    input,
+    textarea {
+      display: block;
+    }
+    label {
+      font-weight: bold;
+    }
+    input.bigger {
+      width: 100%;
+    }
+    span {
+      font-size: 1rem;
+    }
+    input,
+    textarea {
+      border: 1px solid rgb(185, 185, 185);
+      margin-block: 5px 20px;
+      padding: 5px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 1.2rem;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+    }
+    button#submit-content {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 1.2rem;
+      padding: 5px;
+    }
+  }
+</style>
