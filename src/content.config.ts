@@ -8,7 +8,7 @@ const eventos = defineCollection({
       nome: z.string(),
       imagem_ilustrativa: image(),
       descricao: z.string(),
-      data_de_publicacao: z.date(),
+      data_de_publicacao: z.coerce.date(),
     }),
 })
 const tipos = defineCollection({
@@ -17,7 +17,7 @@ const tipos = defineCollection({
     z.object({
       nome: z.string(),
       descricao: z.string(),
-      data_de_publicacao: z.date(),
+      data_de_publicacao: z.coerce.date(),
     }),
 })
 export const collections = {

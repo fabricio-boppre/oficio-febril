@@ -23,10 +23,10 @@ import BasicLayout from "../../layouts/BasicLayout.astro"
       <label class="label" for="data_de_publicacao">Data de publicação</label>
       <div class="control">
         <input
+          type="date"
           id="data_de_publicacao"
-          name="data_de_publicacao"
           class="input"
-          type="text"
+          name="data_de_publicacao"
         />
       </div>
     </div>
@@ -68,21 +68,37 @@ import BasicLayout from "../../layouts/BasicLayout.astro"
 
   function validateSubmission() {
     //save all the input values
-    const nome = getValue("nome")
-    const slug = getValue("slug")
+    const nome = getValue("nome").trim()
+    const slug = getValue("slug").trim()
     const data_de_publicacao = getValue("data_de_publicacao")
-    const descricao = getValue("descricao")
+    const descricao = getValue("descricao").trim()
     const content = getValue("content")
 
+    if (
+      nome == null ||
+      nome == "" ||
+      slug == null ||
+      slug == "" ||
+      data_de_publicacao == null ||
+      data_de_publicacao == "" ||
+      descricao == null ||
+      descricao == "" ||
+      content == null ||
+      content == ""
+    ) {
+      alert("É necessário preencher todos os campos.")
+      return false
+    }
+
     //generate a filename
-    const filename = slug + ".mdx"
+    const filename = slug.replace(/\s/g, "-") + ".mdx"
 
     //Generate a string mimicing the file structure
     //Indentation is important here
     let fileText = `---
-nome: "${nome}"
+nome: ${nome}
 descricao: ${descricao}
-data_de_publicacao: "${data_de_publicacao}"
+data_de_publicacao: ${data_de_publicacao}
 ---
 ${content}`
 
