@@ -1,0 +1,102 @@
+---
+import BasicLayout from "../../layouts/BasicLayout.astro"
+---
+
+<BasicLayout title="Adicionar tipo">
+  <h1>tipos / Adicionar</h1>
+  <div class="columns container my-2">
+    <div class="field">
+      <label class="label" for="nome">Nome</label>
+      <div class="control">
+        <input id="nome" name="nome" class="input" type="text" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label" for="slug">Slug</label>
+      <div class="control">
+        <input id="slug" name="slug" class="input" type="text" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label" for="data_de_publicacao">Data de publicação</label>
+      <div class="control">
+        <input
+          id="data_de_publicacao"
+          name="data_de_publicacao"
+          class="input"
+          type="text"
+        />
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label" for="descricao">Descrição</label>
+      <div class="control">
+        <input id="descricao" name="descricao" class="input" type="text" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label" for="content">Conteúdo</label>
+      <div class="control">
+        <textarea id="content" name="content" class="textarea"></textarea>
+      </div>
+    </div>
+
+    <!-- Prepare the JavaScript function for later -->
+    <div class="control">
+      <button id="submit-content">Enviar</button>
+    </div>
+  </div>
+</BasicLayout>
+
+<script>
+  // Find all buttons with the `alert` class on the page.
+  const button = document.getElementById("submit-content")
+
+  // Handle clicks on each button.
+  button.addEventListener("click", () => {
+    validateSubmission()
+  })
+
+  //Helper function to get value by id
+  function getValue(name) {
+    return document.getElementById(name).value
+  }
+
+  function validateSubmission() {
+    //save all the input values
+    const nome = getValue("nome")
+    const slug = getValue("slug")
+    const data_de_publicacao = getValue("data_de_publicacao")
+    const descricao = getValue("descricao")
+    const content = getValue("content")
+
+    //generate a filename
+    const filename = slug + ".mdx"
+
+    //Generate a string mimicing the file structure
+    //Indentation is important here
+    let fileText = `---
+nome: "${nome}"
+descricao: ${descricao}
+data_de_publicacao: "${data_de_publicacao}"
+---
+${content}`
+
+    //Encode string to URI format
+    const encodedFileText = encodeURIComponent(fileText)
+
+    //Generate a github link with query parameter
+    const githubQueryLink =
+      "https://github.com/fabricio-boppre/oficio-febril/new/main/src/content/tipos?value=" +
+      encodedFileText +
+      "&filename=" +
+      filename
+
+    //Open in a new tab
+    window.open(githubQueryLink)
+  }
+</script>
