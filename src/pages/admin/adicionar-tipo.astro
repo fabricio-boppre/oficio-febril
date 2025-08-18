@@ -43,10 +43,24 @@ import BasicLayout from "../../layouts/BasicLayout.astro"
     <input id="descricao" name="descricao" type="text" class="bigger" />
 
     <label for="content">Conteúdo</label>
-    <textarea id="content" name="content" class="textarea"></textarea>
+    <textarea id="content" name="content" class="textarea"
+      >(Veja dicas de Markdown logo abaixo.)
+    </textarea>
 
     <!-- Prepare the JavaScript function for later -->
     <button id="submit-content">Enviar</button>
+    <p>
+      <b>Códigos Markdown:</b>
+    </p>
+    <ul>
+      <li>Negrito: **texto**</li>
+      <li>Imagens: ![texto alternativo](./nome-do-arquivos.jpg)</li>
+      <li>etc.</li>
+      <li>
+        Links de referência: <a href="https://markdownlivepreview.com"
+          >https://markdownlivepreview.com</a>
+      </li>
+    </ul>
   </form>
 </BasicLayout>
 
