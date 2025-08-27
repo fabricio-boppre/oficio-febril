@@ -6,5 +6,7 @@ import mdx from "@astrojs/mdx"
 // https://astro.build/config
 export default defineConfig({
   vite: { server: { allowedHosts: ["macleod.local"] } },
+  site: "https://fabricio-boppre.github.io",
+  base: "/oficio-febril",
   integrations: [mdx()],
 })
