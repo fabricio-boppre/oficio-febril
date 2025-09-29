@@ -11,16 +11,6 @@ const eventos = defineCollection({
       data_de_publicacao: z.coerce.date(),
     }),
 })
-const tipos = defineCollection({
-  loader: glob({ pattern: "**/*.mdx", base: "./src/content/tipos" }),
-  schema: ({ image }) =>
-    z.object({
-      nome: z.string(),
-      descricao: z.string(),
-      data_de_publicacao: z.coerce.date(),
-    }),
-})
 export const collections = {
   eventos,
-  tipos,
 }

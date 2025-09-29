@@ -11,14 +11,6 @@ const { title } = Astro.props
     <title>ofício febril | {title}</title>
   </head>
   <body>
-    <header>
-      <div><a href="/">ofício febril</a></div>
-      <nav>
-        <a href="/sobre">sobre</a>
-        <a href="/tipos">tipos</a>
-        <a href="/eventos">eventos</a>
-      </nav>
-    </header>
     <main>
       <slot />
       <div vw class="enabled">
@@ -35,72 +27,3 @@ const { title } = Astro.props
     </main>
   </body>
 </html>
-<style lang="scss" is:global>
-  body {
-    font-family: "Courier New", Courier, monospace;
-    margin: 20px;
-    header,
-    main {
-      max-width: 980px;
-      min-width: 280px;
-      margin-inline: auto;
-    }
-    header {
-      margin-bottom: 40px;
-      div {
-        font-size: 2.4rem;
-        font-weight: bold;
-        margin-bottom: 20px;
-        background-color: rgb(23, 62, 96);
-        padding: 5px 10px;
-        a {
-          color: white;
-          text-decoration: none;
-        }
-      }
-      nav {
-        font-size: 1.5rem;
-        a {
-          background-color: rgb(105, 150, 189);
-          padding: 5px 10px;
-          color: white;
-          font-weight: bold;
-          text-decoration: none;
-          &:hover {
-            background-color: rgb(145, 188, 227);
-          }
-        }
-      }
-    }
-    main {
-      color: black;
-      a {
-        color: inherit;
-      }
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-      em {
-        font-size: 1rem;
-      }
-      h1 {
-        font-size: 2rem;
-        border-bottom: 3px solid black;
-        margin-bottom: 30px;
-      }
-      h2 {
-        font-size: 1.4rem;
-        margin: 0;
-      }
-      p,
-      .indexListImages,
-      .indexListText,
-      label,
-      input,
-      ul {
-        font-size: 1.2rem;
-      }
-    }
-  }
-</style>
