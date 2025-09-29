@@ -1,7 +1,32 @@
 ---
+import { css } from "@styled-system/css"
 import BasicLayout from "../layouts/BasicLayout.astro"
 ---
 
 <BasicLayout title="página inicial">
-  <h1>página inicial</h1>
+  <p
+    class={css({
+      fontSize: "2xl",
+      fontFamily: "DirectaSerifRegular",
+    })}
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum,
+    quam vel dictum accumsan, tortor sapien pharetra nibh, et feugiat diam erat
+    sed urna. Proin iaculis augue risus, et accumsan purus efficitur ac. Vivamus
+    tincidunt mi a mi pulvinar aliquam. Duis quis convallis lorem. Proin
+    venenatis ut turpis nec euismod.
+  </p>
+  <br />
+  <p
+    class={css({
+      fontSize: "2xl",
+      fontFamily: "DirectaSerifThin",
+    })}
+  >
+    Donec porta finibus pellentesque. Vestibulum ac lorem nunc. Mauris nunc mi,
+    pulvinar vitae quam eget, condimentum efficitur felis. Phasellus dignissim
+    leo nec fermentum euismod. Phasellus aliquet dolor sit amet leo congue, sit
+    amet fringilla diam aliquet. Vestibulum ante ipsum primis in faucibus orci
+    luctus et ultrices posuere cubilia curae.
+  </p>
 </BasicLayout>

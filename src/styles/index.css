@@ -1,2 +1,17 @@
 /* Panda layers: */
 @layer reset, base, tokens, recipes, utilities;
+
+@font-face {
+  font-family: "DirectaSerifRegular";
+  src: url("/fonts/DirectaSerif-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DirectaSerifThin";
+  src: url("/fonts/DirectaSerif-Thin.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
