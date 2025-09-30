@@ -13,9 +13,20 @@ export default defineConfig({
   // Files to exclude
   exclude: [],
 
+  // Remove the default design tokens injected by Panda
+  presets: [],
+
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      breakpoints: {
+        sm: "560px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1240px",
+        "2xl": "1536px",
+      },
+    },
   },
 
   // The output directory for your css system

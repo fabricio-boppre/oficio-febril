@@ -1,6 +1,7 @@
 ---
 import "@styles/index.css"
 import { css } from "@styled-system/css"
+import { flex } from "@styled-system/patterns"
 const { title } = Astro.props
 ---
 
@@ -12,29 +13,81 @@ const { title } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>ofício febril | {title}</title>
   </head>
-  <body>
-    <main>
+  <body class={flex({ flexDirection: "column" })}>
+    <header>
       <div
         class={css({
-          fontSize: "9xl",
+          flex: "none",
+          h: "20px",
+          w: "100%",
+          bgColor: "white",
+          borderBottom: "3px solid black",
+        })}
+      >
+      </div>
+      <div
+        class={css({
           fontFamily: "DirectaSerifRegular",
+          fontSize: "140px",
+          lineHeight: "180px",
           textTransform: "uppercase",
+          textAlign: "center",
+          position: "relative",
+          zIndex: "-1",
+          mt: "-64px",
+          px: "20px",
         })}
       >
         ofício febril
       </div>
-      <slot />
-      <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-          <div class="vw-plugin-top-wrapper"></div>
+    </header>
+    <div class={css({ maxW: "1000px", m: "0 auto", px: "20px" })}>
+      <main>
+        <slot />
+        <div vw class="enabled">
+          <div vw-access-button class="active"></div>
+          <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+          </div>
         </div>
+        <script is:inline src="https://vlibras.gov.br/app/vlibras-plugin.js"
+        ></script>
+        <script is:inline>
+          new window.VLibras.Widget("https://vlibras.gov.br/app")
+        </script>
+      </main>
+    </div>
+    <footer
+      class={css({
+        overflowX: "hidden",
+        overflowY: "hidden",
+      })}
+    >
+      <div
+        class={css({
+          fontFamily: "DirectaSerifRegular",
+          fontSize: "140px",
+          lineHeight: "180px",
+          textTransform: "uppercase",
+          textAlign: "center",
+          position: "relative",
+          zIndex: "-1",
+          mb: "-83px",
+          px: "20px",
+        })}
+      >
+        ofício febril
       </div>
-      <script is:inline src="https://vlibras.gov.br/app/vlibras-plugin.js"
-      ></script>
-      <script is:inline>
-        new window.VLibras.Widget("https://vlibras.gov.br/app")
-      </script>
-    </main>
+      <div
+        class={css({
+          flex: "none",
+          h: "20px",
+          w: "100%",
+          bgColor: "white",
+          borderTop: "3px solid black",
+        })}
+      >
+      </div>
+    </footer>
   </body>
 </html>
