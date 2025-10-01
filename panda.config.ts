@@ -1,4 +1,5 @@
 import { defineConfig } from "@pandacss/dev"
+import { textStyles } from "@styles/text-styles"
 
 export default defineConfig({
   // Whether to use css reset
@@ -19,12 +20,17 @@ export default defineConfig({
   // Useful for theme customization
   theme: {
     extend: {
+      textStyles,
       breakpoints: {
-        sm: "560px",
-        md: "768px",
-        lg: "1024px",
-        xl: "1240px",
-        "2xl": "1536px",
+        sm: "420px",
+        md: "560px",
+        lg: "768px",
+        xl: "1000px",
+      },
+      tokens: {
+        sizes: {
+          maxWidth: { value: "1000px" },
+        },
       },
     },
   },
