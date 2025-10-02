@@ -31,6 +31,9 @@ export default defineConfig({
         sizes: {
           maxWidth: { value: "1000px" },
         },
+        colors: {
+          basicGray: { value: "#bbbbbb" },
+        },
       },
     },
   },
