@@ -1,16 +1,16 @@
 import { z, reference, defineCollection } from "astro:content"
-import { glob } from "astro/loaders"
+import { glob, file } from "astro/loaders"
 
-const eventos = defineCollection({
-  loader: glob({ pattern: "**/*.mdx", base: "./src/content/eventos" }),
+const cliches = defineCollection({
+  loader: file("./src/content/cliches/cliches.json"),
   schema: ({ image }) =>
     z.object({
-      nome: z.string(),
-      imagem_ilustrativa: image(),
-      descricao: z.string(),
-      data_de_publicacao: z.coerce.date(),
+      titulo: z.string(),
+      autor: z.string(),
+      imagem: image(),
     }),
 })
+
 export const collections = {
-  eventos,
+  cliches,
 }

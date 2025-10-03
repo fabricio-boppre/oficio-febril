@@ -31,6 +31,9 @@ export default defineConfig({
         sizes: {
           maxWidth: { value: "1000px" },
         },
+        spacing: {
+          headerAndFooterYMargin: { value: "20px" },
+        },
         colors: {
           basicGray: { value: "#bbbbbb" },
         },

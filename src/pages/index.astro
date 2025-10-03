@@ -1,15 +1,12 @@
 ---
 import { css } from "@styled-system/css"
+import { flex } from "@styled-system/patterns"
+import { Image } from "astro:assets"
 import BasicLayout from "../layouts/BasicLayout.astro"
+import { getCollection } from "astro:content"
+
+const allCliches = await getCollection("cliches")
+const randomCliche = allCliches[Math.floor(Math.random() * allCliches.length)]
 ---
 
-<BasicLayout title="página inicial">
-  <p
-    class={css({
-      fontSize: "22px",
-      fontFamily: "DirectaSerifRegular",
-    })}
-  >
-    Página inicial em construção
-  </p>
-</BasicLayout>
+<BasicLayout title="página inicial" />
