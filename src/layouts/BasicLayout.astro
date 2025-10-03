@@ -8,8 +8,6 @@ import footerTitle from "@images/footerTitle.png"
 import { getCollection } from "astro:content"
 
 const allCliches = await getCollection("cliches")
-const randomCliche = allCliches[Math.floor(Math.random() * allCliches.length)]
-
 const { title } = Astro.props
 ---
 
@@ -84,6 +82,7 @@ const { title } = Astro.props
         </ul>
       </nav>
       <div
+        id="cliche"
         class={flex({
           maxW: "maxWidth",
           alignItems: "center",
@@ -93,7 +92,6 @@ const { title } = Astro.props
           flex: "1 0 auto",
         })}
       >
-        <Image src={randomCliche.data.imagem} alt={randomCliche.data.titulo} />
       </div>
     </header>
     <main class={css({ maxW: "maxWidth", m: "0 auto", px: "20px" })}>
@@ -151,3 +149,12 @@ const { title } = Astro.props
     </footer>
   </body>
 </html>
+
+<script define:vars={{ allCliches }}>
+  var randomCliche = allCliches[Math.floor(Math.random() * allCliches.length)]
+  const clicheImgDiv = document.getElementById("cliche")
+  var img = document.createElement("img")
+  img.src = "/images/cliches/" + randomCliche.data.imagem
+  img.alt = randomCliche.data.titulo
+  clicheImgDiv.appendChild(img)
+</script>

@@ -1,14 +1,14 @@
 [
   {
-    "id": ".barco_raizes",
+    "id": "barco_raizes",
     "titulo": "Barco Raízes",
     "autor": "João da Silva",
-    "imagem": "./barco_raizes.jpg"
+    "imagem": "barco_raizes.jpg"
   },
   {
     "id": "gaveta",
     "titulo": "Gaveta",
     "autor": "Maria dos Santos",
-    "imagem": "./gaveta.jpg"
+    "imagem": "gaveta.jpg"
   }
 ]

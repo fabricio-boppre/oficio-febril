@@ -4,9 +4,6 @@ import { flex } from "@styled-system/patterns"
 import { Image } from "astro:assets"
 import BasicLayout from "../layouts/BasicLayout.astro"
 import { getCollection } from "astro:content"
-
-const allCliches = await getCollection("cliches")
-const randomCliche = allCliches[Math.floor(Math.random() * allCliches.length)]
 ---
 
 <BasicLayout title="página inicial" />
