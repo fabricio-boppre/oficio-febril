@@ -10,5 +10,11 @@
     "titulo": "Gaveta",
     "autor": "Maria dos Santos",
     "imagem": "gaveta.jpg"
+  },
+  {
+    "id": "cama",
+    "titulo": "Cama",
+    "autor": "Pedro das Dores",
+    "imagem": "cama.jpg"
   }
 ]
