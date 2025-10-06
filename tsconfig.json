@@ -8,6 +8,7 @@
     "paths": {
       "@content/*": ["src/content/*"],
       "@layouts/*": ["src/layouts/*"],
+      "@components/*": ["src/components/*"],
       "@styles/*": ["src/styles/*"],
       "@images/*": ["src/images/*"],
       "@styled-system/*": ["styled-system/*"]

@@ -1,13 +1,9 @@
 ---
 import "@styles/index.css"
 import { css } from "@styled-system/css"
-import { flex } from "@styled-system/patterns"
 import { Image } from "astro:assets"
-import headerTitle from "@images/headerTitle.png"
 import footerTitle from "@images/footerTitle.png"
-import { getCollection } from "astro:content"
 
-const allCliches = await getCollection("cliches")
 const { title } = Astro.props
 ---
 
@@ -20,123 +16,18 @@ const { title } = Astro.props
     <title>ofício febril | {title}</title>
   </head>
   <body class={css({ minW: "320px" })}>
-    <header
-      class={flex({
-        flexDirection: "column",
-        h: "auto",
-        minH: "calc(100vh - var(--spacing-header-and-footer-y-margin))",
-        w: "100%",
-        mt: "headerAndFooterYMargin",
-        borderTop: "3px solid black",
-      })}
-    >
-      <div class={css({ maxW: "maxWidth", m: "0 auto" })}>
-        <Image src={headerTitle} alt="Ofício Febril" />
+    <slot />
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
       </div>
-      <nav
-        class={css({ maxW: "maxWidth", m: "0 auto", p: "40px 20px 0 20px" })}
-      >
-        <ul
-          class={flex({
-            border: "1px solid black",
-            fontFamily: "DirectaSerifSemiBold, Georgia, serif",
-            fontSize: ["1rem", undefined, "1.2rem"],
-            lineHeight: ["20px", undefined, "24px"],
-            flexDirection: ["column", undefined, undefined, "row"],
-            "& li": {
-              flexBasis: "20%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
-              p: ["8px 10px", undefined, undefined, "10px 30px"],
-              "&:not(:last-child)": {
-                borderRight: [
-                  undefined,
-                  undefined,
-                  undefined,
-                  "1px solid black",
-                ],
-                borderBottom: ["1px solid black", undefined, undefined, "none"],
-              },
-              _hover: {
-                bgColor: "basicGray",
-              },
-            },
-          })}
-        >
-          <li>
-            <a href="/sobre-os-projetos">sobre os projetos</a>
-          </li>
-          <li>
-            <a href="/processos-artisticos">processos artísticos</a>
-          </li>
-          <li>
-            <a href="/quando-os-tipos-se-movem">quando os tipos se movem</a>
-          </li>
-          <li>
-            <a href="/pesquisa-e-publicacoes">pesquisa e publicações</a>
-          </li>
-          <li>
-            <a href="/a-oficina-e-o-oficio">a oficina e o ofício</a>
-          </li>
-        </ul>
-      </nav>
-      <div
-        id="cliche"
-        class={flex({
-          maxW: "maxWidth",
-          alignItems: "center",
-          justifyContent: "center",
-          m: "0 auto",
-          p: "20px",
-          flex: "1 0 auto",
-        })}
-      >
-      </div>
-    </header>
-    <main class={css({ maxW: "maxWidth", m: "0 auto", px: "20px" })}>
-      <div class={css({ bgColor: "green" })}>
-        <h1
-          class={css({
-            fontSize: "3rem",
-          })}
-        >
-          Destaques
-        </h1>
-      </div>
-      <div class={css({ bgColor: "blue" })}>
-        <h1
-          class={css({
-            fontSize: "3rem",
-          })}
-        >
-          As últimas
-        </h1>
-      </div>
-      <div class={css({ bgColor: "orange" })}>
-        <h1
-          class={css({
-            fontSize: "3rem",
-          })}
-        >
-          Artistas
-        </h1>
-      </div>
-
-      <slot />
-      <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-          <div class="vw-plugin-top-wrapper"></div>
-        </div>
-      </div>
-      <script is:inline src="https://vlibras.gov.br/app/vlibras-plugin.js"
-      ></script>
-      <script is:inline>
-        new window.VLibras.Widget("https://vlibras.gov.br/app")
-      </script>
-    </main>
+    </div>
+    <script is:inline src="https://vlibras.gov.br/app/vlibras-plugin.js"
+    ></script>
+    <script is:inline>
+      new window.VLibras.Widget("https://vlibras.gov.br/app")
+    </script>
     <footer
       class={css({
         w: "100%",
@@ -150,12 +41,3 @@ const { title } = Astro.props
     </footer>
   </body>
 </html>
-
-<script define:vars={{ allCliches }}>
-  var randomCliche = allCliches[Math.floor(Math.random() * allCliches.length)]
-  const clicheImgDiv = document.getElementById("cliche")
-  var img = document.createElement("img")
-  img.src = "/images/cliches/" + randomCliche.data.imagem
-  img.alt = randomCliche.data.titulo
-  clicheImgDiv.appendChild(img)
-</script>

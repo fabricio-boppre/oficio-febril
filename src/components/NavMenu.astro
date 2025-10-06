@@ -1,0 +1,47 @@
+---
+import { css } from "@styled-system/css"
+import { flex } from "@styled-system/patterns"
+---
+
+<nav class={css({ maxW: "maxWidth", m: "0 auto", p: "40px 20px 0 20px" })}>
+  <ul
+    class={flex({
+      border: "1px solid black",
+      fontFamily: "DirectaSerifSemiBold, Georgia, serif",
+      fontSize: ["1rem", undefined, "1.2rem"],
+      lineHeight: ["20px", undefined, "24px"],
+      flexDirection: ["column", undefined, undefined, "row"],
+      "& li": {
+        flexBasis: "20%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        p: ["8px 10px", undefined, undefined, "10px 30px"],
+        "&:not(:last-child)": {
+          borderRight: [undefined, undefined, undefined, "1px solid black"],
+          borderBottom: ["1px solid black", undefined, undefined, "none"],
+        },
+        _hover: {
+          bgColor: "basicGray",
+        },
+      },
+    })}
+  >
+    <li>
+      <a href="/sobre-os-projetos">sobre os projetos</a>
+    </li>
+    <li>
+      <a href="/processos-artisticos">processos artísticos</a>
+    </li>
+    <li>
+      <a href="/quando-os-tipos-se-movem">quando os tipos se movem</a>
+    </li>
+    <li>
+      <a href="/pesquisa-e-publicacoes">pesquisa e publicações</a>
+    </li>
+    <li>
+      <a href="/a-oficina-e-o-oficio">a oficina e o ofício</a>
+    </li>
+  </ul>
+</nav>

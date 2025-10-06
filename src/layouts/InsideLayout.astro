@@ -1,0 +1,23 @@
+---
+import BasicLayout from "../layouts/BasicLayout.astro"
+import { css } from "@styled-system/css"
+import HeaderTitle from "@components/HederTitle.astro"
+import NavMenu from "@components/NavMenu.astro"
+
+const { title } = Astro.props
+---
+
+<BasicLayout title={title}>
+  <header
+    class={css({
+      mt: "headerAndFooterYMargin",
+      borderTop: "3px solid black",
+    })}
+  >
+    <HeaderTitle />
+    <NavMenu />
+  </header>
+  <main class={css({ maxW: "maxWidth", m: "0 auto", px: "20px" })}>
+    <slot />
+  </main>
+</BasicLayout>
