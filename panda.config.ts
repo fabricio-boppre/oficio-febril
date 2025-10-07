@@ -1,5 +1,6 @@
 import { defineConfig } from "@pandacss/dev"
 import { textStyles } from "@styles/text-styles"
+import { layerStyles } from "@styles/layer-styles"
 
 export default defineConfig({
   // Whether to use css reset
@@ -21,6 +22,7 @@ export default defineConfig({
   theme: {
     extend: {
       textStyles,
+      layerStyles,
       breakpoints: {
         sm: "420px",
         md: "560px",

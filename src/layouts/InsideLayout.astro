@@ -8,16 +8,11 @@ const { title } = Astro.props
 ---
 
 <BasicLayout title={title}>
-  <header
-    class={css({
-      mt: "headerAndFooterYMargin",
-      borderTop: "3px solid black",
-    })}
-  >
+  <header class={css({ layerStyle: "headerLayout" })}>
     <HeaderTitle />
     <NavMenu />
   </header>
-  <main class={css({ maxW: "maxWidth", m: "0 auto", px: "20px" })}>
+  <main class={css({ layerStyle: "mainLayout" })}>
     <slot />
   </main>
 </BasicLayout>

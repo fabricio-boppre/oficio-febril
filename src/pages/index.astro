@@ -13,11 +13,8 @@ const allCliches = await getCollection("cliches")
   <header
     class={flex({
       flexDirection: "column",
-      h: "auto",
       minH: "calc(100vh - var(--spacing-header-and-footer-y-margin))",
-      w: "100%",
-      mt: "headerAndFooterYMargin",
-      borderTop: "3px solid black",
+      layerStyle: "headerLayout",
     })}
   >
     <HeaderTitle />
@@ -35,7 +32,7 @@ const allCliches = await getCollection("cliches")
     >
     </div>
   </header>
-  <main class={css({ maxW: "maxWidth", m: "0 auto", px: "20px" })}>
+  <main class={css({ layerStyle: "mainLayout" })}>
     <div class={css({ bgColor: "green" })}>
       <h1
         class={css({
