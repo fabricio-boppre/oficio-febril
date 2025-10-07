@@ -37,7 +37,7 @@ export default defineConfig({
           headerAndFooterYMargin: { value: "20px" },
         },
         colors: {
-          basicGray: { value: "#bbbbbb" },
+          grayFont: { value: "#9f9c9cff" },
         },
       },
     },

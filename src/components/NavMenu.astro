@@ -1,47 +1,71 @@
 ---
 import { css } from "@styled-system/css"
 import { flex } from "@styled-system/patterns"
+import NavMenuOptions from "@components/NavMenuOptions.astro"
 ---
 
-<nav class={css({ maxW: "maxWidth", m: "0 auto", p: "40px 20px 0 20px" })}>
+<script>
+  const buttonMenu = document.getElementById("menuButton")
+  const NavMenuList = document.getElementById("NavMenuList")
+  buttonMenu?.addEventListener("click", () => {
+    NavMenuList?.classList.toggle("mobileActive")
+  })
+</script>
+
+<nav
+  class={css({
+    maxW: "maxWidth",
+    m: "0 auto",
+    p: ["30px 20px 0 20px", undefined, undefined, "40px 20px 0 20px"],
+  })}
+>
+  <button
+    id="menuButton"
+    class={css({
+      margin: "0 auto",
+      display: ["block", undefined, undefined, "none"],
+      border: "1px solid black",
+      layerStyle: "navMenuButtonAndList",
+      cursor: "pointer",
+      _hover: {
+        color: "grayFont",
+      },
+    })}
+    class="accordion">menu</button
+  >
   <ul
+    id="NavMenuList"
     class={flex({
       border: "1px solid black",
-      fontFamily: "DirectaSerifSemiBold, Georgia, serif",
-      fontSize: ["1rem", undefined, "1.2rem"],
-      lineHeight: ["20px", undefined, "24px"],
       flexDirection: ["column", undefined, undefined, "row"],
+      display: ["none", undefined, undefined, "flex"],
+      "&.mobileActive": {
+        mt: ["10px", undefined, undefined, "0"],
+        display: "flex",
+        position: ["absolute", undefined, undefined, "static"],
+        left: "0",
+        right: "0",
+        mx: ["auto", undefined, undefined, "0"],
+        width: ["fit-content", undefined, undefined, "auto"],
+      },
       "& li": {
-        flexBasis: "20%",
+        flexBasis: ["auto", undefined, undefined, "20%"],
         display: "flex",
         alignItems: "center",
+        bgColor: "white",
         justifyContent: "center",
         textAlign: "center",
-        p: ["8px 10px", undefined, undefined, "10px 30px"],
+        layerStyle: "navMenuButtonAndList",
         "&:not(:last-child)": {
           borderRight: [undefined, undefined, undefined, "1px solid black"],
           borderBottom: ["1px solid black", undefined, undefined, "none"],
         },
         _hover: {
-          bgColor: "basicGray",
+          color: "grayFont",
         },
       },
     })}
   >
-    <li>
-      <a href="/sobre-os-projetos">sobre os projetos</a>
-    </li>
-    <li>
-      <a href="/processos-artisticos">processos artísticos</a>
-    </li>
-    <li>
-      <a href="/quando-os-tipos-se-movem">quando os tipos se movem</a>
-    </li>
-    <li>
-      <a href="/pesquisa-e-publicacoes">pesquisa e publicações</a>
-    </li>
-    <li>
-      <a href="/a-oficina-e-o-oficio">a oficina e o ofício</a>
-    </li>
+    <NavMenuOptions />
   </ul>
 </nav>

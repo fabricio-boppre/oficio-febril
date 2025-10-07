@@ -1,6 +1,7 @@
 ---
 import BasicLayout from "../layouts/BasicLayout.astro"
 import { css } from "@styled-system/css"
+import { flex } from "@styled-system/patterns"
 import HeaderTitle from "@components/HederTitle.astro"
 import NavMenu from "@components/NavMenu.astro"
 
@@ -8,7 +9,7 @@ const { title } = Astro.props
 ---
 
 <BasicLayout title={title}>
-  <header class={css({ layerStyle: "headerLayout" })}>
+  <header class={flex({ layerStyle: "headerLayout" })}>
     <HeaderTitle />
     <NavMenu />
   </header>
