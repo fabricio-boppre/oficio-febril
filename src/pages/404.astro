@@ -1,0 +1,37 @@
+---
+import "@styles/index.css"
+import { css } from "@styled-system/css"
+import { flex } from "@styled-system/patterns"
+import { SEO } from "astro-seo"
+---
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <SEO title="ofício febril" noindex={true} nofollow={true} />
+  </head>
+  <body>
+    <div
+      class={flex({
+        justifyContent: "center",
+        alignItems: "center",
+        h: "100vh",
+        fontFamily: "DirectaSerifLight, Georgia, serif",
+        fontSize: ["1rem", undefined, "1.4rem"],
+        lineHeight: ["20px", undefined, "24px"],
+        p: ["10px", undefined, undefined, "10px 30px"],
+        textAlign: "center",
+        "& a": {
+          textDecoration: "underline",
+        },
+      })}
+    >
+      <p>
+        Esta tela não existe. <a href="/">
+          Clique aqui para voltar à tela inicial.
+        </a>
+      </p>
+    </div>
+  </body>
+</html>
