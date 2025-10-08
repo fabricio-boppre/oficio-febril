@@ -24,10 +24,10 @@ export default defineConfig({
       textStyles,
       layerStyles,
       breakpoints: {
-        sm: "420px",
-        md: "560px",
-        lg: "768px",
-        xl: "1000px",
+        sm: "421px",
+        md: "561px",
+        lg: "769px",
+        xl: "1001px",
       },
       tokens: {
         sizes: {
