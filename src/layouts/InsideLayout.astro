@@ -5,10 +5,14 @@ import { flex } from "@styled-system/patterns"
 import HeaderTitle from "@components/HederTitle.astro"
 import NavMenu from "@components/NavMenu.astro"
 
-const { title } = Astro.props
+const { title, description, canonicalURL } = Astro.props
 ---
 
-<BasicLayout title={title}>
+<BasicLayout
+  title={title}
+  description={description}
+  canonicalURL={canonicalURL}
+>
   <header class={flex({ layerStyle: "headerLayout" })}>
     <HeaderTitle />
     <NavMenu />

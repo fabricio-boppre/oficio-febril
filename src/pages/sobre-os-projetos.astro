@@ -1,9 +1,15 @@
 ---
 import InsideLayout from "../layouts/InsideLayout.astro"
 import { Content as Sobre } from "../content/sobre.mdx"
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
-<InsideLayout title="sobre os projetos">
+<InsideLayout
+  title="sobre os projetos"
+  description="[aguardando]"
+  canonicalURL={canonicalURL}
+>
   <h1>sobre os projetos</h1>
   <Sobre />
 </InsideLayout>

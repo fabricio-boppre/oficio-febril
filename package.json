@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/mdx": "^4.3.6",
     "astro": "^5.14.1",
+    "astro-seo": "^0.8.4",
     "sass": "^1.93.2"
   },
   "devDependencies": {

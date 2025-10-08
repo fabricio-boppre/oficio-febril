@@ -2,9 +2,10 @@
 import "@styles/index.css"
 import { css } from "@styled-system/css"
 import { Image } from "astro:assets"
+import { SEO } from "astro-seo"
 import footerTitle from "@images/footerTitle.png"
 
-const { title } = Astro.props
+const { title, description, canonicalURL } = Astro.props
 ---
 
 <html lang="pt-br">
@@ -14,6 +15,27 @@ const { title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>ofício febril | {title}</title>
+    <SEO
+      description={description}
+      openGraph={{
+        basic: {
+          title: "ofício febril | " + title,
+          type: "website",
+          url: canonicalURL,
+          image:
+            "https://www.oficiofebril.com.br/imagens/oficio-febril-open-graph.jpg",
+        },
+        optional: {
+          description: description,
+        },
+      }}
+      twitter={{
+        card: "summary_large_image",
+      }}
+      extend={{
+        meta: [{ name: "title", content: "ofício febril | " + title }],
+      }}
+    />
   </head>
   <body class={css({ minW: "320px" })}>
     <slot />

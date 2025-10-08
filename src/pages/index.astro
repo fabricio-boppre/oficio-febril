@@ -6,6 +6,7 @@ import HeaderTitle from "@components/HederTitle.astro"
 import NavMenu from "@components/NavMenu.astro"
 import { getCollection } from "astro:content"
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const allCliches = await getCollection("cliches")
 const allClichesSimplified = allCliches.flatMap((cliche) => ({
   titulo: cliche.data.titulo,
@@ -14,7 +15,11 @@ const allClichesSimplified = allCliches.flatMap((cliche) => ({
 }))
 ---
 
-<BasicLayout title="página inicial">
+<BasicLayout
+  title="página inicial"
+  description="[aguardando]"
+  canonicalURL={canonicalURL}
+>
   <header
     class={flex({
       minH: "calc(100vh - var(--spacing-header-and-footer-y-margin))",
