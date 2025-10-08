@@ -6,7 +6,7 @@ const cliches = defineCollection({
   schema: ({ image }) =>
     z.object({
       titulo: z.string(),
-      autor: z.string(),
+      descricao: z.string(),
       imagem: z.string(),
     }),
 })

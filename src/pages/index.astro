@@ -69,6 +69,6 @@ const allCliches = await getCollection("cliches")
   const clicheImgDiv = document.getElementById("cliche")
   var img = document.createElement("img")
   img.src = "/images/cliches/" + randomCliche.data.imagem
-  img.alt = randomCliche.data.titulo
+  img.alt = randomCliche.data.titulo + ", " + randomCliche.data.descricao
   clicheImgDiv.appendChild(img)
 </script>
