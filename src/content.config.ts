@@ -2,16 +2,6 @@ import { z, reference, defineCollection } from "astro:content"
 import { glob, file } from "astro/loaders"
 
 const cliches = defineCollection({
-  loader: file("./src/content/cliches.json"),
-  schema: ({ image }) =>
-    z.object({
-      titulo: z.string(),
-      descricao: z.string(),
-      imagem: z.string(),
-    }),
-})
-
-const cliches2 = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/cliches" }),
   schema: ({ image }) =>
     z.object({
@@ -23,5 +13,4 @@ const cliches2 = defineCollection({
 
 export const collections = {
   cliches,
-  cliches2,
 }

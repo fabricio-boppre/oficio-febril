@@ -1,0 +1,5 @@
+---
+titulo: "tipos_soltos"
+descricao: "[aguardando]"
+imagem: "./tipos_soltos.jpg"
+---
