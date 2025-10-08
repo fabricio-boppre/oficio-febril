@@ -7,6 +7,10 @@ import NavMenu from "@components/NavMenu.astro"
 import { getCollection } from "astro:content"
 
 const allCliches = await getCollection("cliches")
+
+const allCliches2 = await getCollection("cliches2")
+
+console.log(allCliches2[0].data)
 ---
 
 <BasicLayout title="página inicial">
@@ -64,11 +68,11 @@ const allCliches = await getCollection("cliches")
   </main>
 </BasicLayout>
 
-<script define:vars={{ allCliches }}>
-  var randomCliche = allCliches[Math.floor(Math.random() * allCliches.length)]
+<script define:vars={{ allCliches2 }}>
+  var randomCliche = allCliches2[Math.floor(Math.random() * allCliches2.length)]
   const clicheImgDiv = document.getElementById("cliche")
   var img = document.createElement("img")
-  img.src = "/images/cliches/" + randomCliche.data.imagem
+  img.src = randomCliche.data.imagem.src
   img.alt = randomCliche.data.titulo + ", " + randomCliche.data.descricao
   clicheImgDiv.appendChild(img)
 </script>

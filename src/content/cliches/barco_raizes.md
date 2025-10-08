@@ -1,0 +1,5 @@
+---
+titulo: "barco enraíza"
+descricao: "clichê a partir de desenho de aline dias"
+imagem: "./barco_raizes.jpg"
+---
