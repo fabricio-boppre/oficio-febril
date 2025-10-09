@@ -1,0 +1,75 @@
+---
+import "@styles/index.css"
+import { css } from "@styled-system/css"
+import { SEO } from "astro-seo"
+
+const { title } = Astro.props
+---
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>ofício febril | administração{title ? " | " + title : ""}</title>
+    <SEO noindex={true} nofollow={true} />
+  </head>
+  <body
+    class={css({
+      maxW: "maxWidth",
+      minW: "320px",
+      m: "0 auto",
+      p: "20px",
+    })}
+  >
+    <header
+      class={css({
+        fontFamily: "DirectaSerifSemiBold, Georgia, serif",
+        fontSize: ["2rem", undefined, "3rem"],
+        lineHeight: ["40px", undefined, "60px"],
+        my: "20px",
+      })}
+    >
+      <a href="/">OFÍCIO FEBRIL</a>
+    </header>
+    <main
+      class={css({
+        "& p, ul, ol": {
+          fontFamily: "DirectaSerifLight, Georgia, serif",
+          fontSize: ["1rem", undefined, "1.2rem"],
+          lineHeight: ["22px", undefined, "26px"],
+        },
+        "& h2, p, ul, ol, pre": { mb: "20px" },
+        "& ul > li": { listStyleType: "disc" },
+        "& ol > li": { listStyleType: "decimal" },
+        "& li": { listStylePosition: "inside", mb: "10px" },
+        "& a": { textDecoration: "underline" },
+        "& h2": {
+          fontFamily: "DirectaSerifSemiBold, Georgia, serif",
+          fontSize: ["1.2rem", undefined, "1.6rem"],
+          lineHeight: ["24px", undefined, "30px"],
+        },
+        "& pre": {
+          p: "10px",
+          bgColor: "#ECF1F2!",
+          color: "black!",
+          whiteSpace: "pre-wrap",
+        },
+      })}
+    >
+      <h1
+        class={css({
+          fontFamily: "DirectaSerifSemiBold, Georgia, serif",
+          fontSize: ["1.6rem", undefined, "2rem"],
+          lineHeight: ["32px", undefined, "40px"],
+          mb: "20px",
+          "& a": { textDecoration: "underline" },
+        })}
+      >
+        <a href="/admin/">Administração</a>{title ? " / " + title : ""}
+      </h1>
+      <slot />
+    </main>
+  </body>
+</html>
