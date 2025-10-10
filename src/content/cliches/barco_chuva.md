@@ -1,5 +1,0 @@
----
-titulo: "barco_chuva"
-descricao: "[aguardando]"
-imagem: "./barco_chuva.jpg"
----

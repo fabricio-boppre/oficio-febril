@@ -1,5 +1,0 @@
----
-titulo: "cama enraíza"
-descricao: "clichê a partir de desenho de aline dias e diego rayck (para marcos martins, in memoriam)"
-imagem: "./cama.jpg"
----

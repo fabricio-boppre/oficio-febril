@@ -1,5 +1,0 @@
----
-titulo: "borda_passaro"
-descricao: "[aguardando]"
-imagem: "./borda_passaro.jpg"
----

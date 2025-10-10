@@ -1,5 +1,0 @@
----
-titulo: "mar"
-descricao: "[aguardando]"
-imagem: "./mar.jpg"
----
