@@ -35,11 +35,13 @@ const { title } = Astro.props
     </header>
     <main
       class={css({
-        layerStyle: "basicLists",
         "& h1": { textStyle: "basicHeading1" },
         "& h2": { textStyle: "basicHeading2" },
         "& h3": { textStyle: "basicHeading3" },
         "& p, ul, ol": { textStyle: "basicText" },
+        "& ul, ol": { layerStyle: "basicLists" },
+        "& ol": { layerStyle: "basicListsOrdered" },
+        "& ul": { layerStyle: "basicListsUnordered" },
         "& h1, h2, h3, p, ul, ol, pre": { layerStyle: "basicText" },
         "& pre": {
           p: "10px",

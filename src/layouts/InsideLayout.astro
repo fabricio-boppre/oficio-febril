@@ -17,7 +17,20 @@ const { title, description, canonicalURL } = Astro.props
     <HeaderTitle />
     <NavMenu />
   </header>
-  <main class={css({ layerStyle: "mainLayout" })}>
+  <main
+    class={css({
+      layerStyle: "mainLayout",
+      my: "40px",
+      "& h1": { textStyle: "basicHeading1" },
+      "& h2": { textStyle: "basicHeading2" },
+      "& h3": { textStyle: "basicHeading3" },
+      "& p, ul, ol": { textStyle: "basicText", textAlign: "justify" },
+      "& ul, ol": { layerStyle: "basicLists" },
+      "& ol": { layerStyle: "basicListsOrdered" },
+      "& ul": { layerStyle: "basicListsUnordered" },
+      "& h1, h2, h3, p, ul, ol, pre": { layerStyle: "basicText" },
+    })}
+  >
     <slot />
   </main>
 </BasicLayout>

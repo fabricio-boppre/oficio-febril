@@ -15,7 +15,7 @@ export const layerStyles = defineLayerStyles({
       "The basic styles for the main, common to its presentation in any layout.",
     value: {
       maxW: "maxWidth",
-      m: "0 auto",
+      mx: "auto",
       px: "20px",
     },
   },
@@ -32,11 +32,21 @@ export const layerStyles = defineLayerStyles({
       mb: "20px",
     },
   },
-  basicLists: {
-    description: "The basic styles content lists.",
+  basicListsUnordered: {
+    description: "The basic styles for content unordered lists.",
     value: {
-      "& ul > li": { listStyleType: "disc" },
-      "& ol > li": { listStyleType: "decimal" },
+      "& li": { listStyleType: "disc" },
+    },
+  },
+  basicListsOrdered: {
+    description: "The basic styles for content ordered lists.",
+    value: {
+      "& li": { listStyleType: "decimal" },
+    },
+  },
+  basicLists: {
+    description: "The basic styles for content lists.",
+    value: {
       "& li": {
         listStylePosition: "inside",
         mb: "10px",
