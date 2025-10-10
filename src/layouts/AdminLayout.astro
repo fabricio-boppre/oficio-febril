@@ -35,38 +35,23 @@ const { title } = Astro.props
     </header>
     <main
       class={css({
-        "& p, ul, ol": {
-          fontFamily: "DirectaSerifLight, Georgia, serif",
-          fontSize: ["1rem", undefined, "1.2rem"],
-          lineHeight: ["22px", undefined, "26px"],
-        },
-        "& h2, p, ul, ol, pre": { mb: "20px" },
-        "& ul > li": { listStyleType: "disc" },
-        "& ol > li": { listStyleType: "decimal" },
-        "& li": { listStylePosition: "inside", mb: "10px" },
-        "& a": { textDecoration: "underline" },
-        "& h2": {
-          fontFamily: "DirectaSerifSemiBold, Georgia, serif",
-          fontSize: ["1.2rem", undefined, "1.6rem"],
-          lineHeight: ["24px", undefined, "30px"],
-        },
+        layerStyle: "basicLists",
+        "& h1": { textStyle: "basicHeading1" },
+        "& h2": { textStyle: "basicHeading2" },
+        "& h3": { textStyle: "basicHeading3" },
+        "& p, ul, ol": { textStyle: "basicText" },
+        "& h1, h2, h3, p, ul, ol, pre": { layerStyle: "basicText" },
         "& pre": {
           p: "10px",
+          fontSize: ["0.9rem!", undefined, "1rem!"],
+          lineHeight: ["22px", undefined, "24px"],
           bgColor: "#ECF1F2!",
           color: "black!",
           whiteSpace: "pre-wrap",
         },
       })}
     >
-      <h1
-        class={css({
-          fontFamily: "DirectaSerifSemiBold, Georgia, serif",
-          fontSize: ["1.6rem", undefined, "2rem"],
-          lineHeight: ["32px", undefined, "40px"],
-          mb: "20px",
-          "& a": { textDecoration: "underline" },
-        })}
-      >
+      <h1>
         <a href="/admin/">Administração</a>{title ? " / " + title : ""}
       </h1>
       <slot />

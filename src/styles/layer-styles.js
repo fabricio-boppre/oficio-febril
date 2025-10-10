@@ -21,9 +21,27 @@ export const layerStyles = defineLayerStyles({
   },
   navMenuButtonAndList: {
     description:
-      "The basic styles for the button and list itens, so they have the same layout.",
+      "The basic styles for the menu button and list itens, so they have the same layout.",
     value: {
       p: ["10px", undefined, undefined, "10px 30px"],
+    },
+  },
+  basicText: {
+    description: "The basic styles for content texts.",
+    value: {
+      mb: "20px",
+    },
+  },
+  basicLists: {
+    description: "The basic styles content lists.",
+    value: {
+      "& ul > li": { listStyleType: "disc" },
+      "& ol > li": { listStyleType: "decimal" },
+      "& li": {
+        listStylePosition: "inside",
+        mb: "10px",
+        "& ol": { mt: "10px", ml: "20px" },
+      },
     },
   },
 })
