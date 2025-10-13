@@ -24,11 +24,12 @@ const { title, description, canonicalURL } = Astro.props
       "& h1": { textStyle: "basicHeading1" },
       "& h2": { textStyle: "basicHeading2" },
       "& h3": { textStyle: "basicHeading3" },
+      "& h4": { textStyle: "basicHeading4" },
       "& p, ul, ol": { textStyle: "basicText", textAlign: "justify" },
       "& ul, ol": { layerStyle: "basicLists" },
       "& ol": { layerStyle: "basicListsOrdered" },
       "& ul": { layerStyle: "basicListsUnordered" },
-      "& h1, h2, h3, p, ul, ol, pre": { layerStyle: "basicText" },
+      "& h1, h2, h3, h4, p, ul, ol, pre": { layerStyle: "basicText" },
     })}
   >
     <slot />

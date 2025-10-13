@@ -49,8 +49,10 @@ export const layerStyles = defineLayerStyles({
     value: {
       "& li": {
         listStylePosition: "inside",
-        mb: "10px",
-        "& ol": { mt: "10px", ml: "20px" },
+        "&:not(:last-child)": {
+          mb: "20px",
+        },
+        "& ol": { mt: "20px", ml: "20px" },
       },
     },
   },

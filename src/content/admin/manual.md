@@ -5,6 +5,7 @@
 5. [Publicando novo conteúdo](#publicando-novo-conteudo)
 6. [Descrição detalhada das seções do site](#descricao-detalhada-das-secoes)
    1. [Tela inicial](#tela-inicial)
+      1. [Clichês](#cliches)
    2. [sobre os projetos](#sobre-os-projetos)
    3. [processos artísticos](#processos-artisticos)
    4. [quando os tipos se movem](#quando-os-tipos-se-movem)
@@ -118,7 +119,24 @@ Quando os arquivos estiverem prontos para serem publicados, siga o roteiro abaix
 
 ### Tela inicial <a name="tela-inicial"></a>
 
-[em construção]
+#### Clichês <a name="cliches"></a>
+
+Os clichês estão cadastrados em arquivos MDX localizados nesta pasta: https://github.com/fabricio-boppre/oficio-febril/tree/main/src/content/cliches. Para publicar um novo clichê, você deve submeter um novo arquivo com a seguinte _front matter_:
+
+```
+---
+titulo: título do clichê
+descricao: autoria, créditos etc.
+imagem: ./slug_do_cliche.jpg
+---
+```
+
+Como nome do arquivo MDX e de sua imagem correspondente, utilize a slug do título do clichê. A imagem deve ser armazenada na mesma pasta dos arquivos MDX. Por exemplo, um clichê intitulado _Máquina_ será formado por dois arquivos:
+
+- maquina.mdx
+- maquina.jpg
+
+Para a imagem, utilize arquivos com no máximo 350px de largura e 450px de altura.
 
 ### sobre os projetos <a name="sobre-os-projetos"></a>
 

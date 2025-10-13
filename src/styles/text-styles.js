@@ -30,8 +30,16 @@ export const textStyles = defineTextStyles({
   basicHeading3: {
     description: "The basic styles for content h3 headings.",
     value: {
-      fontFamily: "DirectaSerifRegular, Georgia, serif",
+      fontFamily: "DirectaSerifSemiBold, Georgia, serif",
       fontSize: ["1.2rem", undefined, "1.4rem"],
+      lineHeight: ["24px", undefined, "28px"],
+    },
+  },
+  basicHeading4: {
+    description: "The basic styles for content h4 headings.",
+    value: {
+      fontFamily: "DirectaSerifSemiBold, Georgia, serif",
+      fontSize: ["1rem", undefined, "1.2rem"],
       lineHeight: ["24px", undefined, "28px"],
     },
   },
