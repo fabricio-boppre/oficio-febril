@@ -122,7 +122,7 @@ Quando os arquivos estiverem prontos para serem publicados, siga o roteiro abaix
 
 ### sobre os projetos <a name="sobre-os-projetos"></a>
 
-[em construção]
+A tela _sobre os projetos_, sendo uma página simples (e não uma coleção de diversas páginas agrupadas em uma seção ou categoria), é formada por um único arquivo MDX. Este arquivo tem apenas o texto da tela, sem _front matter_. Para editá-lo, você pode acessar o link a seguir: https://github.com/fabricio-boppre/oficio-febril/blob/main/src/content/sobre-os-projetos/sobre-os-projetos.mdx. No cabeçalho sobre o texto, no canto direito, há o ícone de um lápis: após clicá-lo você entra no modo de edição e poderá efetuar as mudanças. Ao finalizar, clique em _Commit changes_ para iniciar o processo de reconstrução do site.
 
 ### processos artísticos <a name="processos-artisticos"></a>
 
