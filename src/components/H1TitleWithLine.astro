@@ -1,0 +1,24 @@
+---
+import { css } from "@styled-system/css"
+---
+
+<div>
+  <h1
+    class={css({
+      zIndex: "-1",
+      position: "relative",
+    })}
+  >
+    <slot />
+  </h1>
+  <div
+    class={css({
+      w: "100%",
+      mt: ["-32px", undefined, "-37px"],
+      borderTop: "1px solid black",
+      bgColor: "white",
+      h: "30px",
+    })}
+  >
+  </div>
+</div>

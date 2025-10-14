@@ -14,8 +14,8 @@ export const textStyles = defineTextStyles({
     description: "The basic styles for content h1 headings.",
     value: {
       fontFamily: "DirectaSerifSemiBold, Georgia, serif",
-      fontSize: ["1.6rem", undefined, "2rem"],
-      lineHeight: ["32px", undefined, "40px"],
+      fontSize: ["1.8rem", undefined, "2.4rem"],
+      lineHeight: ["36px", undefined, "48px"],
       "& a": { textDecoration: "underline" },
     },
   },
@@ -23,8 +23,8 @@ export const textStyles = defineTextStyles({
     description: "The basic styles for content h2 headings.",
     value: {
       fontFamily: "DirectaSerifSemiBold, Georgia, serif",
-      fontSize: ["1.4rem", undefined, "1.6rem"],
-      lineHeight: ["28px", undefined, "32px"],
+      fontSize: ["1.4rem", undefined, "1.8rem"],
+      lineHeight: ["28px", undefined, "36px"],
     },
   },
   basicHeading3: {
