@@ -3,7 +3,9 @@
 3. [Entendendo a estrutura de pastas e arquivos do repositório](#entendendo-a-estrutura)
 4. [Formato de um arquivo de conteúdo](#formato-de-um-arquivo)
 5. [Publicando novo conteúdo](#publicando-novo-conteudo)
-6. [Descrição detalhada das seções do site](#descricao-detalhada-das-secoes)
+6. [Editando conteúdo](#editando-conteudo)
+7. [Dicas gerais para a publicação de textos](#dicas-gerais)
+8. [Descrição detalhada das seções do site](#descricao-detalhada-das-secoes)
    1. [Tela inicial](#tela-inicial)
       1. [Clichês](#cliches)
    2. [sobre os projetos](#sobre-os-projetos)
@@ -51,7 +53,7 @@ artistas:
   - slug_do_artista_2
 ---
 
-Teremos uma grande festa! Para usar itálico, você deve colocar o *conteúdo entre asteriscos*. Para negrito, **dois asteriscos**.
+Para usar itálico, você deve colocar o *conteúdo entre asteriscos*. Para negrito, **dois asteriscos**.
 
 Um link é [assim](https://link.com.br). Neste caso, a palavra com link será a “assim”.
 
@@ -71,6 +73,15 @@ Uma imagem:
 
 ![Grande festa](./grande-festa-1.jpg)
 _Legenda da imagem_
+
+### Subtítulo nível 3
+
+(...)
+
+#### Subtítulo nível 4
+
+(...)
+
 ```
 
 Explicando este formato:
@@ -114,6 +125,16 @@ Quando os arquivos estiverem prontos para serem publicados, siga o roteiro abaix
 5. Quando os arquivos aparecerem relacionados como prontos para publicação, você pode preencher o campo de descrição logo abaixo de _Commit changes_, descrevendo o que está sendo publicado, quem está publicando e quaisquer outras informações que achar conveniente deixar registradas. Utilize para isso o campo _extended description_, deixando o primeiro campo com o texto padrão _Add files via upload_. Mas isso é opcional e pode ser deixado intacto;
 6. Clique no botão verde _Commit changes_ (que significa algo como _Efetivar mudanças_);
 7. Começará então o processo (ou _workflow_) de reconstrução do site. Para acompanhar o andamento deste _workflow_, clique em _Actions_ (link direto: https://github.com/fabricio-boppre/oficio-febril/actions). Ao finalizar, um ícone verde ao lado do mais recente _workflow_ sinalizará seu sucesso; em caso de falha, será exibido um ícone vermelho. Tendo funcionado, você já pode visitar o site para verificar a atualização em seu conteúdo. Caso ocorra alguma falha, o site permanecerá funcionando em sua última versão pré-falha, ou seja, sem o conteúdo cuja publicação ocasionou o problema.
+
+## Editando conteúdo <a name="editando-conteudo"></a>
+
+Para editar um conteúdo previamente publicado no site, você deve localizar seu arquivo MDX na estrutura de conteúdo (https://github.com/fabricio-boppre/oficio-febril/tree/main/src/content) e abri-lo para visualização. No cabeçalho sobre o texto, no canto direito, há o ícone de um lápis: após clicá-lo você entra no modo de edição e poderá efetuar as mudanças. Ao finalizar, clique em _Commit changes_ para iniciar o processo de reconstrução do site.
+
+## Dicas gerais para a publicação de textos <a name="dicas-gerais"></a>
+
+- As imagens que serão publicadas junto com os textos devem ter no máximo 960px de largura, uma vez que esta é a largura máxima do site. Images maiores serão redimensionadas para este limite, porém o peso dos arquivos permanecerá desnecessariamente o mesmo, o que trará prejuízos para a performance do site.
+- Imagens publicadas com menos do que 960px são exibidas com suas medidas originais. O site não aumenta artificialmente as medidas das imagens.
+- Para publicar subtítulos ao longo dos textos, utilize apenas a marcação de segundo nível em diante, uma vez que a marcação de primeiro nível é reservada no layout para o título principal da tela. Na formatação Markdown, subtítulos são definidos com o caracter cerquilha (#) antes do título, sendo que a quantidade de cerquilhas define o nível. Veja exemplos [aqui](#publicando-novo-conteudo).
 
 ## Descrição detalhada das seções do site <a name="descricao-detalhada-das-secoes"></a>
 
