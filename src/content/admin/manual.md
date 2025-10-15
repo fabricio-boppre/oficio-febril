@@ -8,11 +8,11 @@
 8. [Descrição detalhada das seções do site](#descricao-detalhada-das-secoes)
    1. [Tela inicial](#tela-inicial)
       1. [Clichês](#cliches)
-   2. [sobre os projetos](#sobre-os-projetos)
-   3. [processos artísticos](#processos-artisticos)
-   4. [quando os tipos se movem](#quando-os-tipos-se-movem)
-   5. [pesquisa e publicações](#pesquisa-e-publicacoes)
-   6. [a oficina e o ofício](#a-oficina-e-o-oficio)
+   2. [Sobre os projetos](#sobre-os-projetos)
+   3. [Processos artísticos](#processos-artisticos)
+   4. [Quando os tipos se movem](#quando-os-tipos-se-movem)
+   5. [Pesquisa e publicações](#pesquisa-e-publicacoes)
+   6. [A oficina e o ofício](#a-oficina-e-o-oficio)
 
 --
 
@@ -32,13 +32,13 @@ Foi criado um colaborador genérico utilizando a conta do Google _oficiofebril@g
 
 ## Entendendo a estrutura de pastas e arquivos do repositório <a name="entendendo-a-estrutura"></a>
 
-Os arquivos que abrigam o conteúdo do site estão na pasta _content_ do repositório (https://github.com/fabricio-boppre/oficio-febril/tree/main/src/content), agrupados em pastas que correspondem às categorias ou seções. Por exemplo, a subpasta _processos-artisticos_ armazena o conteúdo publicado na seção _processos artísticos_ do site.
+Os arquivos que abrigam o conteúdo do site estão na pasta _content_ do repositório (https://github.com/fabricio-boppre/oficio-febril/tree/main/src/content), agrupados em pastas que correspondem às categorias ou seções. Por exemplo, a subpasta _processos-artisticos_ armazena o conteúdo publicado na seção _Processos artísticos_ do site.
 
 Os arquivos e subpastas utilizam o formato de nomenclatura conhecido como _slug_. Um _slug_ é uma expressão que pode ser utilizada como parte de um endereço web, ou seja, não possui espaços e nem caracteres especiais. Por exemplo, o título _Convenção de tipógrafos_, no formato _slug_, vira _convencao-de-tipografos_. Utilize sempre este formato para nomear os arquivos a serem enviados para a pasta _content_.
 
 ## Formato de um arquivo de conteúdo <a name="formato-de-um-arquivo"></a>
 
-Os arquivos de conteúdo devem possuir a terminação MDX. Por exemplo, o arquivo _grande-festa.mdx_, armazenado na subpasta _processos-artisticos_ e com o conteúdo exibido abaixo, será o responsável pela tela _Grande festa_ a ser exibida na seção _processos artísticos_:
+Os arquivos de conteúdo devem possuir a terminação MDX. Por exemplo, o arquivo _grande-festa.mdx_, armazenado na subpasta _processos-artisticos_ e com o conteúdo exibido abaixo, será o responsável pela tela _Grande festa_ a ser exibida na seção _Processos artísticos_:
 
 ```
 ---
@@ -134,7 +134,7 @@ Para editar um conteúdo previamente publicado no site, você deve localizar seu
 
 - As imagens que serão publicadas junto com os textos devem ter no máximo 960px de largura, uma vez que esta é a largura máxima do site. Images maiores serão redimensionadas para este limite, porém o peso dos arquivos permanecerá desnecessariamente o mesmo, o que trará prejuízos para a performance do site.
 - Imagens publicadas com menos do que 960px são exibidas com suas medidas originais. O site não aumenta artificialmente as medidas das imagens.
-- Para publicar subtítulos ao longo dos textos, utilize apenas a marcação de segundo nível em diante, uma vez que a marcação de primeiro nível é reservada no layout para o título principal da tela. Na formatação Markdown, subtítulos são definidos com o caracter cerquilha (#) antes do título, sendo que a quantidade de cerquilhas define o nível. Veja exemplos [aqui](#publicando-novo-conteudo).
+- Para publicar subtítulos ao longo dos textos, utilize apenas a marcação de segundo nível em diante, uma vez que a marcação de primeiro nível é reservada no layout para o título principal da tela. Na formatação Markdown, subtítulos são definidos com o caracter cerquilha (#) antes do título, sendo que a quantidade de cerquilhas define o nível. Veja exemplos [aqui](#formato-de-um-arquivo).
 
 ## Descrição detalhada das seções do site <a name="descricao-detalhada-das-secoes"></a>
 
@@ -159,22 +159,52 @@ Como nome do arquivo MDX e de sua imagem correspondente, utilize a slug do títu
 
 Para a imagem, utilize arquivos com no máximo 350px de largura e 450px de altura.
 
-### sobre os projetos <a name="sobre-os-projetos"></a>
+### Sobre os projetos <a name="sobre-os-projetos"></a>
 
 A tela _sobre os projetos_, sendo uma página simples (e não uma coleção de diversas páginas agrupadas em uma seção ou categoria), é formada por um único arquivo MDX. Este arquivo tem apenas o texto da tela, sem _front matter_. Para editá-lo, você pode acessar o link a seguir: https://github.com/fabricio-boppre/oficio-febril/blob/main/src/content/sobre-os-projetos/sobre-os-projetos.mdx. No cabeçalho sobre o texto, no canto direito, há o ícone de um lápis: após clicá-lo você entra no modo de edição e poderá efetuar as mudanças. Ao finalizar, clique em _Commit changes_ para iniciar o processo de reconstrução do site.
 
-### processos artísticos <a name="processos-artisticos"></a>
+### Processos artísticos <a name="processos-artisticos"></a>
+
+Antes de publicar ou editar processos, você deve se certificar de que seus artistas associados já estão publicados no site. Os arquivos MDX dos artistas encontram-se em https://github.com/fabricio-boppre/oficio-febril/tree/main/src/content/artistas. A _front matter_ do arquivo de um artista possui apenas seu nome. O nome do arquivo deve ser a versão _slug_ do nome do artista, e este nome _slug_ será utilizado na associação entre artistas e processos.
+
+Os _Processos artísticos_ estão cadastrados em arquivos MDX localizados nesta pasta: https://github.com/fabricio-boppre/oficio-febril/tree/main/src/content/processos-artisticos. Para publicar um novo processo, você deve submeter um novo arquivo com a seguinte _front matter_:
+
+```
+---
+titulo: Processo artístico
+rascunho: true | false
+destaque_na_capa: true | false
+imagem_para_indice: ./processo-de-teste-index.jpg
+descricao: Descrição do processo artístico.
+data_da_publicacao: 2025-10-14
+artistas:
+  - diego-rayck
+  - aline-dias
+---
+```
+
+O campo _rascunho_ serve para que o processo não apareça de imediato no site após a sua reconstrução, para que você possa revisá-lo antes através de um link separado. (Mais instruções em breve.)
+
+O campo _destaque_na_capa_ serve para indicar que este processo deve aparecer em destaque na capa do site. Assim como o campo _rascunho_ acima, seu valor deve ser _true_ ou _false_.
+
+O campo _imagem_para_indice_ serve para indicar o arquivo de imagem que será utilizado para ilustrar este processo nos índices em que ele será exibido. Utilize arquivos que tenham 200px de largura e 200px de altura, para manter estes índices bem alinhados e padronizados.
+
+O campo _descricao_ serve para descrever o processo em índices de sistemas de pesquisa (coomo, por exemplo, no Google), compartilhamentos em redes sociais etc. Deve ser um pequeno resumo do processo, com no máximo 160 caracteres.
+
+O campo _artistas_ serve para indicar os artistas envolvidos neste processo. Para isso, iniciando em uma nova linha, faça uma lista das _slugs_ dos artistas deste processo (um ou mais), com dois espaços antes de cada item e um traço precedendo as _slugs_, exatamente como no exemplo acima. Fazendo corretamente esta associação, o site se encarrega de exibir os artistas na tela de um processo e também de exibir os processos de um artista em sua tela.
+
+Por fim, abaixo da _front matter_, insira o conteúdo de texto e imagens deste processo utilizando o formato Markdown.
+
+Para a organização e nomenclatura dos arquivos, siga as sugestões descritas [aqui](#publicando-novo-conteudo). Dicas gerais se encontram [aqui](#dicas-gerais).
+
+### Quando os tipos se movem <a name="quando-os-tipos-se-movem"></a>
 
 [em construção]
 
-### quando os tipos se movem <a name="quando-os-tipos-se-movem"></a>
+### Pesquisa e publicações <a name="pesquisa-e-publicacoes"></a>
 
 [em construção]
 
-### pesquisa e publicações <a name="pesquisa-e-publicacoes"></a>
-
-[em construção]
-
-### a oficina e o ofício <a name="a-oficina-e-o-oficio"></a>
+### A oficina e o ofício <a name="a-oficina-e-o-oficio"></a>
 
 [em construção]
