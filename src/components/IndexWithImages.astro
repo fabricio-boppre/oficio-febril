@@ -18,7 +18,7 @@ const { content, route } = Astro.props
             display: "block",
             w: "200px",
           })}
-          href={route + "/" + item.id}
+          href={"/" + route + "/" + item.id}
         >
           <img src={item.data.imagem_para_indice.src} alt={item.data.titulo} />{" "}
           <span class={css({ textStyle: "spanText" })}>{item.data.titulo}</span>

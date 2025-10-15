@@ -1,0 +1,59 @@
+---
+import InsideLayout from "@layouts/InsideLayout.astro"
+import IndexWithImages from "@components/IndexWithImages.astro"
+import H1TitleWithLine from "@components/H1TitleWithLine.astro"
+import ProcessosArtisticosNavLinks from "@components/ProcessosArtisticosNavLinks.astro"
+import { css } from "@styled-system/css"
+import { getCollection, render, getEntries } from "astro:content"
+
+// Let's call getCollection() inside of getStaticPaths() to have our collection data available for building static routes.
+// Then, we create the individual URL paths using the id property of each content entry.
+// Each page is passed the entire collection entry as a prop for use in your page template.
+export async function getStaticPaths() {
+  const artistas = await getCollection("artistas")
+  const staticPathsAndProps = artistas.map((artista) => {
+    return {
+      params: { id: artista.id },
+      props: { artista },
+    }
+  })
+  return staticPathsAndProps
+}
+
+// For a specific processo, we get meta info, related artistas and render the content in a component called `Content`:
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const { artista } = Astro.props
+const esteArtistaId = artista.id
+const processosArtisticos = (
+  await getCollection("processosArtisticos", ({ data }) => {
+    return data.rascunho !== true
+  })
+).sort(
+  (a, b) =>
+    b.data.data_da_publicacao.valueOf() - a.data.data_da_publicacao.valueOf(),
+)
+// console.log(processosArtisticos)
+var processosArtisticosDesteartista = new Array()
+processosArtisticos.map((processo) => {
+  processo.data.artistas.map((artista) => {
+    if (artista.id == esteArtistaId) {
+      processosArtisticosDesteartista.push(processo)
+    }
+  })
+})
+---
+
+<InsideLayout
+  title={artista.data.nome}
+  description={"Processos artísticos de " + artista.data.nome}
+  canonicalURL={canonicalURL}
+>
+  <H1TitleWithLine title={"processos artísticos / " + artista.data.nome} />
+  <article>
+    <ProcessosArtisticosNavLinks />
+    <IndexWithImages
+      content={processosArtisticosDesteartista}
+      route="processos-artisticos/processo"
+    />
+  </article>
+</InsideLayout>

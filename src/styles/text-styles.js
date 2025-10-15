@@ -56,8 +56,8 @@ export const textStyles = defineTextStyles({
     description: "The basic styles for content span.",
     value: {
       fontFamily: "DirectaSerifLight, Georgia, serif",
-      fontSize: ["0.8rem", undefined, "1rem"],
-      lineHeight: ["20px", undefined, "24px"],
+      fontSize: ["0.9rem", undefined, "1rem"],
+      lineHeight: ["22px", undefined, "24px"],
       "& a": { textDecoration: "underline" },
     },
   },
