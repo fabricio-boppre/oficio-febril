@@ -1,0 +1,29 @@
+---
+import { css } from "@styled-system/css"
+import { flex } from "@styled-system/patterns"
+const { content, route } = Astro.props
+---
+
+<div
+  class={flex({
+    gap: "53px",
+    flexWrap: "wrap",
+  })}
+>
+  {
+    content.map((item) => {
+      return (
+        <a
+          class={css({
+            display: "block",
+            w: "200px",
+          })}
+          href={route + "/" + item.id}
+        >
+          <img src={item.data.imagem_para_indice.src} alt={item.data.titulo} />{" "}
+          <span class={css({ textStyle: "spanText" })}>{item.data.titulo}</span>
+        </a>
+      )
+    })
+  }
+</div>

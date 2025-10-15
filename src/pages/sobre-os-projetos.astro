@@ -1,7 +1,6 @@
 ---
 import InsideLayout from "@layouts/InsideLayout.astro"
 import H1TitleWithLine from "@components/H1TitleWithLine.astro"
-import { css } from "@styled-system/css"
 import { Content as Sobre } from "@content/sobre-os-projetos/sobre-os-projetos.mdx"
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
@@ -12,6 +11,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
   description="[aguardando]"
   canonicalURL={canonicalURL}
 >
-  <H1TitleWithLine>sobre os projetos</H1TitleWithLine>
-  <Sobre />
+  <H1TitleWithLine title="sobre os projetos" />
+  <article>
+    <Sobre />
+  </article>
 </InsideLayout>

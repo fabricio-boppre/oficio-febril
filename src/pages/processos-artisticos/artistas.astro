@@ -1,0 +1,33 @@
+---
+import InsideLayout from "@layouts/InsideLayout.astro"
+import ProcessosArtisticosNavLinks from "@components/ProcessosArtisticosNavLinks.astro"
+import H1TitleWithLine from "@components/H1TitleWithLine.astro"
+import { getCollection } from "astro:content"
+
+const artistas = (await getCollection("artistas")).sort((a, b) =>
+  a.data.nome.localeCompare(b.data.nome),
+)
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+---
+
+<InsideLayout
+  title="artistas"
+  description="[aguardando]"
+  canonicalURL={canonicalURL}
+>
+  <H1TitleWithLine title="processos artísticos / artistas" />
+  <ProcessosArtisticosNavLinks />
+  <article>
+    <ul>
+      {
+        artistas.map((artista) => (
+          <li>
+            <a href={"/processos-artisticos/artista/" + artista.id}>
+              {artista.data.nome}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
+</InsideLayout>

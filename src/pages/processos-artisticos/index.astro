@@ -1,15 +1,33 @@
 ---
 import InsideLayout from "@layouts/InsideLayout.astro"
 import H1TitleWithLine from "@components/H1TitleWithLine.astro"
+import ProcessosArtisticosNavLinks from "@components/ProcessosArtisticosNavLinks.astro"
+import IndexWithImages from "@components/IndexWithImages.astro"
+import { getCollection } from "astro:content"
 
+const processosArtisticos = (
+  await getCollection("processosArtisticos", ({ data }) => {
+    return data.rascunho !== true
+  })
+).sort(
+  (a, b) =>
+    b.data.data_da_publicacao.valueOf() - a.data.data_da_publicacao.valueOf(),
+)
+console.log(processosArtisticos)
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <InsideLayout
-  title="sobre os projetos"
+  title="processos artísticos"
   description="[aguardando]"
   canonicalURL={canonicalURL}
 >
-  <H1TitleWithLine>processos artísticos</H1TitleWithLine>
-  <p>[em construção]</p>
+  <H1TitleWithLine title="processos artísticos" />
+  <ProcessosArtisticosNavLinks />
+  <article>
+    <IndexWithImages
+      content={processosArtisticos}
+      route="processos-artisticos/processo"
+    />
+  </article>
 </InsideLayout>

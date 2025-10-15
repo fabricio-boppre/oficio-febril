@@ -1,0 +1,23 @@
+---
+import { css } from "@styled-system/css"
+---
+
+<div
+  class={css({
+    mb: "20px",
+    fontFamily: "DirectaSerifLight, Georgia, serif",
+    fontSize: ["0.8rem", undefined, "1rem"],
+    lineHeight: ["20px", undefined, "24px"],
+    "& a": {
+      textDecoration: "underline",
+      _hover: {
+        color: "black",
+      },
+    },
+    color: "grayFont",
+  })}
+>
+  visualizar: <a href="/processos-artisticos">processos</a> | <a
+    href="/processos-artisticos/artistas">artistas</a
+  >
+</div>
