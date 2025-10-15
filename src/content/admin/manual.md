@@ -87,7 +87,7 @@ _Legenda da imagem_
 Explicando este formato:
 
 1. O trecho inicial, cercado por três traços e chamado _front matter_, traz informações sobre o conteúdo: o título do texto, a data de publicação, etc. Essas informações são obrigatórias e seus títulos (antes dos dois pontos) não devem ser alterados; preencha somente o conteúdo depois dos dois pontos;
-2. Ainda na _front matter_, imagens devem ser preenchidas com o nome do arquivo precedido por um ponto e uma barra (./). Datas devem obedecer ao formato YYYY-MM-DD;
+2. Ainda na _front matter_, imagens devem ser preenchidas com o nome do arquivo precedido por um ponto e uma barra (./). Datas devem obedecer ao formato AAAA-MM-DD;
 3. A _front matter_ dos arquivos pode variar de acordo com o layout de cada seção. Por exemplo, uma seção pode ter seu índice ilustrado por imagens enquanto outra tem o índice formado apenas por links textuais; neste caso, a _front matter_ dos arquivos deste segunda seção não teria o item _imagem_ilustrativa_;
 4. Após o fechamento da _front matter_ vem o conteúdo propriamente dito. Para formatação, utilize códigos Markdown, que servem para formatar textos que serão exibidos em sites. Alguns dos códigos mais comuns estão no exemplo acima. No link a seguir estão explicados todos os códigos Markdown: https://www.markdownguide.org/basic-syntax/. Neste outro é possível fazer testes online: https://markdownlivepreview.com/.
 5. Para exibir imagens, podemos recorrer também ao Markdown. Uma imagem é inserida da seguinte forma:
@@ -190,6 +190,8 @@ O campo _destaque_na_capa_ serve para indicar que este processo deve aparecer em
 O campo _imagem_para_indice_ serve para indicar o arquivo de imagem que será utilizado para ilustrar este processo nos índices em que ele será exibido. Utilize arquivos que tenham 200px de largura e 200px de altura, para manter estes índices bem alinhados e padronizados.
 
 O campo _descricao_ serve para descrever o processo em índices de sistemas de pesquisa (coomo, por exemplo, no Google), compartilhamentos em redes sociais etc. Deve ser um pequeno resumo do processo, com no máximo 160 caracteres.
+
+O campo _data_da_publicacao_ deve ser peenchido com a data da publicação deste conteúdo (no formato AAAA-MM-DD), que será utilizado para ordenar os itens nos índices de processos.
 
 O campo _artistas_ serve para indicar os artistas envolvidos neste processo. Para isso, iniciando em uma nova linha, faça uma lista das _slugs_ dos artistas deste processo (um ou mais), com dois espaços antes de cada item e um traço precedendo as _slugs_, exatamente como no exemplo acima. Fazendo corretamente esta associação, o site se encarrega de exibir os artistas na tela de um processo e também de exibir os processos de um artista em sua tela.
 
