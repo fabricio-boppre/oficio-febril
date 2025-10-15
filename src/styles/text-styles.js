@@ -46,18 +46,18 @@ export const textStyles = defineTextStyles({
   basicText: {
     description: "The basic styles for content texts.",
     value: {
-      fontFamily: "DirectaSerifLight, Georgia, serif",
-      fontSize: ["1rem", undefined, "1.2rem"],
-      lineHeight: ["24px", undefined, "28px"],
+      fontFamily: "DirectaSerifRegular, Georgia, serif",
+      fontSize: ["1.1rem", undefined, "1.2rem"],
+      lineHeight: ["26px", undefined, "28px"],
       "& a": { textDecoration: "underline" },
     },
   },
   spanText: {
     description: "The basic styles for content span.",
     value: {
-      fontFamily: "DirectaSerifLight, Georgia, serif",
-      fontSize: ["0.9rem", undefined, "1rem"],
-      lineHeight: ["22px", undefined, "24px"],
+      fontFamily: "DirectaSerifRegular, Georgia, serif",
+      fontSize: "1rem",
+      lineHeight: "24px",
       "& a": { textDecoration: "underline" },
     },
   },
