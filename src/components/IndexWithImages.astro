@@ -1,6 +1,7 @@
 ---
 import { css } from "@styled-system/css"
 import { flex } from "@styled-system/patterns"
+import { Image } from "astro:assets"
 const { content, route } = Astro.props
 ---
 
@@ -20,7 +21,7 @@ const { content, route } = Astro.props
           })}
           href={"/" + route + "/" + item.id}
         >
-          <img src={item.data.imagem_para_indice.src} alt={item.data.titulo} />{" "}
+          <Image src={item.data.imagem_para_indice} alt={item.data.titulo} />
           <span class={css({ textStyle: "spanText" })}>{item.data.titulo}</span>
         </a>
       )
