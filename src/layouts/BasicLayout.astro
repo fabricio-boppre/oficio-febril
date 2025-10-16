@@ -39,6 +39,24 @@ const { title, description, canonicalURL } = Astro.props
     />
   </head>
   <body class={css({ minW: "320px" })}>
+    <noscript>
+      <div
+        class={css({
+          p: "40px",
+          textAlign: "center",
+          bgColor: "#e80000",
+          color: "white",
+          fontFamily: "DirectaSerifSemiBold, Georgia, serif",
+          fontSize: ["1.2rem", undefined, "1.4rem"],
+          lineHeight: ["28px", undefined, "32px"],
+        })}
+      >
+        <p>
+          Para que este website funcione corretamente é necessário que você
+          ative o JavaScript em seu browser.
+        </p>
+      </div>
+    </noscript>
     <slot />
     <div vw class="enabled">
       <div vw-access-button class="active"></div>
