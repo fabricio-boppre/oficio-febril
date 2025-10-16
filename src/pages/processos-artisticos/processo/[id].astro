@@ -22,7 +22,9 @@ export async function getStaticPaths() {
 // For a specific processo, we get meta info, related artistas and render the content in a component called `Content`:
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const { processo } = Astro.props
-const artistas = await getEntries(processo.data.artistas)
+const artistas = (await getEntries(processo.data.artistas)).sort((a, b) =>
+  a.data.nome.localeCompare(b.data.nome),
+)
 const { Content } = await render(processo)
 ---
 
