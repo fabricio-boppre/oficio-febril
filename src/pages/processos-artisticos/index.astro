@@ -14,14 +14,15 @@ const processosArtisticos = (
     b.data.data_da_publicacao.valueOf() - a.data.data_da_publicacao.valueOf(),
 )
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const title = "processos artísticos"
 ---
 
 <InsideLayout
-  title="processos artísticos"
+  title={title}
   description="[aguardando]"
   canonicalURL={canonicalURL}
 >
-  <H1TitleWithLine title="processos artísticos" />
+  <H1TitleWithLine title={title} />
   <ProcessosArtisticosNavLinks />
   <article>
     <IndexWithImages

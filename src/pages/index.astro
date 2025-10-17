@@ -13,10 +13,11 @@ const allClichesSimplified = allCliches.flatMap((cliche) => ({
   descricao: cliche.data.descricao,
   imagemSrc: cliche.data.imagem.src,
 }))
+const title = "página inicial"
 ---
 
 <BasicLayout
-  title="página inicial"
+  title={title}
   description="[aguardando]"
   canonicalURL={canonicalURL}
 >

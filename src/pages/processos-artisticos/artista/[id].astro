@@ -32,7 +32,6 @@ const processosArtisticos = (
   (a, b) =>
     b.data.data_da_publicacao.valueOf() - a.data.data_da_publicacao.valueOf(),
 )
-// console.log(processosArtisticos)
 var processosArtisticosDesteartista = new Array()
 processosArtisticos.map((processo) => {
   processo.data.artistas.map((artista) => {
@@ -41,14 +40,15 @@ processosArtisticos.map((processo) => {
     }
   })
 })
+const title = "processos artísticos / " + artista.data.nome
 ---
 
 <InsideLayout
-  title={artista.data.nome}
+  title={title}
   description={"Processos artísticos de " + artista.data.nome}
   canonicalURL={canonicalURL}
 >
-  <H1TitleWithLine title={"processos artísticos / " + artista.data.nome} />
+  <H1TitleWithLine title={title} />
   <article>
     <ProcessosArtisticosNavLinks />
     <IndexWithImages

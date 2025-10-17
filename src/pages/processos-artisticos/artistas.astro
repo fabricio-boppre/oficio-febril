@@ -8,14 +8,15 @@ const artistas = (await getCollection("artistas")).sort((a, b) =>
   a.data.nome.localeCompare(b.data.nome),
 )
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const title = "processos artísticos / artistas"
 ---
 
 <InsideLayout
-  title="artistas"
+  title={title}
   description="[aguardando]"
   canonicalURL={canonicalURL}
 >
-  <H1TitleWithLine title="processos artísticos / artistas" />
+  <H1TitleWithLine title={title} />
   <ProcessosArtisticosNavLinks />
   <article>
     <ul>

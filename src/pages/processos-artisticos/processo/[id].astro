@@ -26,14 +26,15 @@ const artistas = (await getEntries(processo.data.artistas)).sort((a, b) =>
   a.data.nome.localeCompare(b.data.nome),
 )
 const { Content } = await render(processo)
+const title = "processos artísticos / " + processo.data.titulo
 ---
 
 <InsideLayout
-  title={processo.data.titulo}
+  title={title}
   description={processo.data.descricao}
   canonicalURL={canonicalURL}
 >
-  <H1TitleWithLine title={"processos artísticos / " + processo.data.titulo} />
+  <H1TitleWithLine title={title} />
   <article>
     <Content />
     <h2>Artistas</h2>
