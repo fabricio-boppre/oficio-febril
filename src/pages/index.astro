@@ -4,15 +4,50 @@ import { flex } from "@styled-system/patterns"
 import BasicLayout from "@layouts/BasicLayout.astro"
 import HeaderTitle from "@components/HeaderTitle.astro"
 import NavMenu from "@components/NavMenu.astro"
+import H1TitleWithLine from "@components/H1TitleWithLine.astro"
+import { Image } from "astro:assets"
 import { getCollection } from "astro:content"
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+// Getting the cliches:
 const allCliches = await getCollection("cliches")
 const allClichesSimplified = allCliches.flatMap((cliche) => ({
   titulo: cliche.data.titulo,
   descricao: cliche.data.descricao,
   imagemSrc: cliche.data.imagem.src,
 }))
+
+// Creating the array for all the destaques:
+var destaques = new Array()
+
+// Getting processos_artisticos that are destaque and pushing them inside destaques array:
+const processosArtisticosDestaques = await getCollection(
+  "processosArtisticos",
+  ({ data }) => {
+    return data.rascunho !== true && data.destaque_na_capa === true
+  },
+)
+processosArtisticosDestaques.map((processo) => {
+  destaques.push({
+    id: processo.id,
+    titulo: processo.data.titulo,
+    imagem_para_indice: processo.data.imagem_para_indice,
+    data_da_publicacao: processo.data.data_da_publicacao,
+    route: "processos-artisticos/processo",
+  })
+})
+
+// Getting quando_os_tipos_se_movem that are destaque and pushing them inside destaques array:
+// [under construction]
+
+// Getting a_oficina_e_o_oficio that are destaque and pushing them inside destaques array:
+// [under construction]
+
+// Sorting destaques:
+destaques.sort(
+  (a, b) => b.data_da_publicacao.valueOf() - a.data_da_publicacao.valueOf(),
+)
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const title = "página inicial"
 ---
 
@@ -43,34 +78,34 @@ const title = "página inicial"
     </div>
   </header>
   <main class={css({ layerStyle: "mainLayout" })}>
-    <div class={css({ bgColor: "green" })}>
-      <h1
-        class={css({
-          fontSize: "3rem",
+    <section class={css({})}>
+      <H1TitleWithLine title="destaques" />
+      <div
+        class={flex({
+          gap: ["30px", undefined, "53px"],
+          flexWrap: "wrap",
         })}
       >
-        Destaques
-      </h1>
-    </div>
-    <div class={css({ bgColor: "blue" })}>
-      <h1
-        class={css({
-          fontSize: "3rem",
-        })}
-      >
-        As últimas
-      </h1>
-    </div>
-    <div class={css({ bgColor: "orange" })}>
-      <h1
-        class={css({
-          fontSize: "3rem",
-        })}
-      >
-        Artistas
-      </h1>
-    </div>
-
+        {
+          destaques.map((item) => {
+            return (
+              <a
+                class={css({
+                  display: "block",
+                  w: "200px",
+                })}
+                href={"/" + item.route + "/" + item.id}
+              >
+                <Image src={item.imagem_para_indice} alt={item.titulo} />
+                <span class={css({ textStyle: "spanText" })}>
+                  {item.titulo}
+                </span>
+              </a>
+            )
+          })
+        }
+      </div>
+    </section>
     <slot />
   </main>
 </BasicLayout>

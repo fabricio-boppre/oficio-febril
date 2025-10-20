@@ -21,7 +21,6 @@ const { title, description, canonicalURL } = Astro.props
     class={css({
       layerStyle: "mainLayout",
       my: "40px",
-      "& h1": { textStyle: "basicHeading1" },
       "& h2": { textStyle: "basicHeading2" },
       "& h3": { textStyle: "basicHeading3" },
       "& h4": { textStyle: "basicHeading4" },
@@ -29,7 +28,7 @@ const { title, description, canonicalURL } = Astro.props
       "& ul, ol": { layerStyle: "basicLists" },
       "& ol": { layerStyle: "basicListsOrdered" },
       "& ul": { layerStyle: "basicListsUnordered" },
-      "& h1, h2, h3, h4, p, ul, ol, pre": { layerStyle: "basicText" },
+      "& h2, h3, h4, p, ul, ol, pre": { layerStyle: "basicText" },
       "& img + em": {
         textStyle: "spanText",
         fontStyle: "normal",
