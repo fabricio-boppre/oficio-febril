@@ -136,6 +136,7 @@ Para editar um conteúdo previamente publicado no site, você deve localizar seu
 - As imagens que serão publicadas junto com os textos devem ter no máximo 960px de largura, uma vez que esta é a largura máxima do site. Images maiores serão redimensionadas para este limite, porém o peso dos arquivos permanecerá desnecessariamente o mesmo, o que trará prejuízos para a performance do site.
 - Imagens publicadas com menos do que 960px são exibidas com suas medidas originais. O site não aumenta artificialmente as medidas das imagens.
 - Para publicar subtítulos ao longo dos textos, utilize apenas a marcação de segundo nível em diante, uma vez que a marcação de primeiro nível é reservada no layout para o título principal da tela. Na formatação Markdown, subtítulos são definidos com o caracter cerquilha (#) antes do título, sendo que a quantidade de cerquilhas define o nível. Veja exemplos [aqui](#formato-de-um-arquivo).
+- Se você quiser publicar um novo conteúdo mas avaliá-lo e revisá-lo antes de torná-lo público, você pode cadastrar o campo _rascunho_ na _front matter_ como _true_. Desta forma este texto não irá imediatamente aparecer no site público, mas estará disponível para revisão na tela de [administração de rascunhos](/admin/rascunhos). Feita a revisão, basta [editar o conteúdo](#editando-conteudo), configurando desta vez o campo _rascunho_ como _false_. Então, na reconstrução que irá se seguir, o texto irá aparecer no site público.
 
 ## Publicando vídeos <a name="publicando-videos"></a>
 
@@ -208,7 +209,7 @@ artistas:
 ---
 ```
 
-O campo _rascunho_ serve para que o processo não apareça de imediato no site após a sua reconstrução, para que você possa revisá-lo antes através de um link separado. (Mais instruções em breve.)
+O campo _rascunho_ serve para que o processo não apareça de imediato no site após a sua reconstrução, para que você possa revisá-lo antes através de um link separado. Ver instruções em [Dicas gerais para a publicação de textos](#dicas-gerais).
 
 O campo _destaque_na_capa_ serve para indicar que este processo deve aparecer em destaque na capa do site. Assim como o campo _rascunho_ acima, seu valor deve ser _true_ ou _false_.
 
