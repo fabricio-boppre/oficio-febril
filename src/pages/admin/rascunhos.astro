@@ -1,7 +1,40 @@
 ---
 import AdminLayout from "@layouts/AdminLayout.astro"
+import IndexWithImages from "@components/IndexWithImages.astro"
+import { getCollection } from "astro:content"
+
+const processosArtisticos = (
+  await getCollection("processosArtisticos", ({ data }) => {
+    return data.rascunho !== false
+  })
+).sort(
+  (a, b) =>
+    b.data.data_da_publicacao.valueOf() - a.data.data_da_publicacao.valueOf(),
+)
 ---
 
 <AdminLayout title="Rascunhos">
-  <p>em construção</p>
+  <p>
+    Abaixo você tem acesso aos textos cadastrados como rascunhos, para que possa
+    revisá-los antes de torná-los públicos:
+  </p>
+  <section>
+    <h2>Processos artísticos</h2>
+    <IndexWithImages
+      content={processosArtisticos}
+      route="processos-artisticos/processo"
+    />
+  </section>
+  <section>
+    <h2>Quando os tipos se movem</h2>
+    <p>[em construção]</p>
+  </section>
+  <section>
+    <h2>Pesquisa e publicações</h2>
+    <p>[em construção]</p>
+  </section>
+  <section>
+    <h2>A oficina e o ofício</h2>
+    <p>[em construção]</p>
+  </section>
 </AdminLayout>
