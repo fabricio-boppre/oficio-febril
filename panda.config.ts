@@ -35,6 +35,7 @@ export default defineConfig({
         },
         spacing: {
           headerAndFooterYMargin: { value: "20px" },
+          basicContentBlockBottomMartin: { value: "20px" },
         },
         colors: {
           grayFont: { value: "#9f9c9cff" },

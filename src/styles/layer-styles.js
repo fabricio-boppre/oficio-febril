@@ -29,7 +29,7 @@ export const layerStyles = defineLayerStyles({
   basicText: {
     description: "The basic styles for content texts.",
     value: {
-      mb: "20px",
+      mb: "basicContentBlockBottomMartin",
     },
   },
   basicListsUnordered: {
