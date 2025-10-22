@@ -5,7 +5,8 @@
 5. [Publicando novo conteúdo](#publicando-novo-conteudo)
 6. [Editando conteúdo](#editando-conteudo)
 7. [Dicas gerais para a publicação de textos](#dicas-gerais)
-8. [Descrição detalhada das seções do site](#descricao-detalhada-das-secoes)
+8. [Publicando vídeos](#publicando-videos)
+9. [Descrição detalhada das seções do site](#descricao-detalhada-das-secoes)
    1. [Tela inicial](#tela-inicial)
       1. [Clichês](#cliches)
    2. [Sobre os projetos](#sobre-os-projetos)
@@ -135,6 +136,30 @@ Para editar um conteúdo previamente publicado no site, você deve localizar seu
 - As imagens que serão publicadas junto com os textos devem ter no máximo 960px de largura, uma vez que esta é a largura máxima do site. Images maiores serão redimensionadas para este limite, porém o peso dos arquivos permanecerá desnecessariamente o mesmo, o que trará prejuízos para a performance do site.
 - Imagens publicadas com menos do que 960px são exibidas com suas medidas originais. O site não aumenta artificialmente as medidas das imagens.
 - Para publicar subtítulos ao longo dos textos, utilize apenas a marcação de segundo nível em diante, uma vez que a marcação de primeiro nível é reservada no layout para o título principal da tela. Na formatação Markdown, subtítulos são definidos com o caracter cerquilha (#) antes do título, sendo que a quantidade de cerquilhas define o nível. Veja exemplos [aqui](#formato-de-um-arquivo).
+
+## Publicando vídeos <a name="publicando-videos"></a>
+
+Para publicar um vídeo do YoutTube junto do conteúdo de uma tela, é possível simplesmente colar o código de integração que o próprio YouTube oferece para seus vídeos. Esta funcionalidade do YouTube, no entanto, é insatisfatória pois os vídeos assim publicados não são responsivos, ou seja, são sempre exibidos com uma largura fixa que não se adequa à visualização em telas pequenas. Para resolver este problema, podemos utilizar uma solução independente chamada _Astro Embed_. Trata-se de uma extensão que deve ser invocada no começo do arquivo MDX. Segue exemplo abaixo:
+
+```
+---
+titulo: Grande festa
+rascunho: true | false
+(...)
+---
+
+import { YouTube } from "astro-embed"
+
+Veja este bonito vídeo abaixo:
+
+<YouTube id="https://www.youtube.com/watch?v=MbxRu7fwR24" />
+
+Aqui continua o texto.
+```
+
+A linha que vem logo embaixo da _front matter_, que inicia com _import_, deve ser copiada exatamente da maneira exemplificada acima (ela não será exibida no texto a ser publicado no site). O vídeo aparecerá onde for inserido o módulo _< YouTube id="URL do vídeo" >_, que deve ser escrito examente como exemplificado acima, substituindo apenas o endereço do vídeo de exemplo pelo do vídeo que você quer exibir.
+
+A extensão _Astro Embed_ também pode ser utilizada para exibir vídeos do Vimeo e tweets do Twitter. Clique [aqui](https://astro-embed.netlify.app/getting-started/#supported-services) para mais instruções.
 
 ## Descrição detalhada das seções do site <a name="descricao-detalhada-das-secoes"></a>
 
