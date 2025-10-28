@@ -3,8 +3,7 @@ import InsideLayout from "@layouts/InsideLayout.astro"
 import IndexWithImages from "@components/IndexWithImages.astro"
 import H1TitleWithLine from "@components/H1TitleWithLine.astro"
 import ProcessosArtisticosNavLinks from "@components/ProcessosArtisticosNavLinks.astro"
-import { css } from "@styled-system/css"
-import { getCollection, render, getEntries } from "astro:content"
+import { getCollection } from "astro:content"
 
 // Let's call getCollection() inside of getStaticPaths() to have our collection data available for building static routes.
 // Then, we create the individual URL paths using the id property of each content entry.
@@ -40,15 +39,16 @@ processosArtisticos.map((processo) => {
     }
   })
 })
-const title = "processos artísticos / " + artista.data.nome
+const preTitle = "Processos artísticos"
+const title = artista.data.nome
 ---
 
 <InsideLayout
-  title={title}
+  title={preTitle + " / " + title}
   description={"Processos artísticos de " + artista.data.nome}
   canonicalURL={canonicalURL}
 >
-  <H1TitleWithLine title={title} />
+  <H1TitleWithLine preTitle={preTitle} title={title} />
   <article>
     <ProcessosArtisticosNavLinks />
     <IndexWithImages

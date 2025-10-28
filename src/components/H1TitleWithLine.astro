@@ -1,6 +1,6 @@
 ---
 import { css } from "@styled-system/css"
-const { title } = Astro.props
+const { preTitle, title } = Astro.props
 ---
 
 <header>
@@ -12,7 +12,16 @@ const { title } = Astro.props
       position: "relative",
     })}
   >
-    {title}
+    {
+      preTitle ? (
+        <>
+          <span class={css({ color: "grayFont" })}>{preTitle}</span> /
+        </>
+      ) : (
+        ""
+      )
+    }
+    <span>{title}</span>
   </h1>
   <div
     class={css({
