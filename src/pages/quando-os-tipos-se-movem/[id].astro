@@ -1,0 +1,38 @@
+---
+import InsideLayout from "@layouts/InsideLayout.astro"
+import H1TitleWithLine from "@components/H1TitleWithLine.astro"
+import { css } from "@styled-system/css"
+import { getCollection, render, getEntries } from "astro:content"
+
+// Let's call getCollection() inside of getStaticPaths() to have our collection data available for building static routes.
+// Then, we create the individual URL paths using the id property of each content entry.
+// Each page is passed the entire collection entry as a prop for use in your page template.
+export async function getStaticPaths() {
+  const quandoOsTipos = await getCollection("quandoOsTipos")
+  const staticPathsAndProps = quandoOsTipos.map((quando) => {
+    return {
+      params: { id: quando.id },
+      props: { quando },
+    }
+  })
+  return staticPathsAndProps
+}
+
+// For a specific item, we get meta info and render the content in a component called `Content`:
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const { quando } = Astro.props
+const { Content } = await render(quando)
+const preTitle = "Quando os tipos se movem"
+const title = quando.data.titulo
+---
+
+<InsideLayout
+  title={preTitle + " / " + title}
+  description={quando.data.descricao}
+  canonicalURL={canonicalURL}
+>
+  <H1TitleWithLine preTitle={preTitle} title={title} />
+  <article>
+    <Content />
+  </article>
+</InsideLayout>

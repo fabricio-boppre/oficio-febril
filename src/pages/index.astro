@@ -37,7 +37,21 @@ processosArtisticosDestaques.map((processo) => {
 })
 
 // Getting quando_os_tipos_se_movem that are destaque and pushing them inside destaques array:
-// [under construction]
+const quandoOsTiposDestaques = await getCollection(
+  "quandoOsTipos",
+  ({ data }) => {
+    return data.rascunho !== true && data.destaque_na_capa === true
+  },
+)
+quandoOsTiposDestaques.map((processo) => {
+  destaques.push({
+    id: processo.id,
+    titulo: processo.data.titulo,
+    imagem_para_indice: processo.data.imagem_para_indice,
+    data_da_publicacao: processo.data.data_da_publicacao,
+    route: "quando-os-tipos-se-movem",
+  })
+})
 
 // Getting a_oficina_e_o_oficio that are destaque and pushing them inside destaques array:
 // [under construction]

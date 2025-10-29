@@ -11,6 +11,14 @@ const processosArtisticos = (
   (a, b) =>
     b.data.data_da_publicacao.valueOf() - a.data.data_da_publicacao.valueOf(),
 )
+const quandoOsTipos = (
+  await getCollection("quandoOsTipos", ({ data }) => {
+    return data.rascunho !== false
+  })
+).sort(
+  (a, b) =>
+    b.data.data_da_publicacao.valueOf() - a.data.data_da_publicacao.valueOf(),
+)
 ---
 
 <AdminLayout title="Rascunhos">
@@ -27,7 +35,7 @@ const processosArtisticos = (
   </section>
   <section>
     <h2>Quando os tipos se movem</h2>
-    <p>[em construção]</p>
+    <IndexWithImages content={quandoOsTipos} route="quando-os-tipos-se-movem" />
   </section>
   <section>
     <h2>Pesquisa e publicações</h2>

@@ -48,7 +48,7 @@ export const textStyles = defineTextStyles({
     value: {
       fontFamily: "DirectaSerifRegular, Georgia, serif",
       fontSize: ["1.1rem", undefined, "1.2rem"],
-      lineHeight: ["26px", undefined, "28px"],
+      lineHeight: ["22px", undefined, "28px"],
       "& a": { textDecoration: "underline" },
     },
   },
@@ -57,7 +57,7 @@ export const textStyles = defineTextStyles({
     value: {
       fontFamily: "DirectaSerifRegular, Georgia, serif",
       fontSize: "1rem",
-      lineHeight: "24px",
+      lineHeight: "22px",
       "& a": { textDecoration: "underline" },
     },
   },

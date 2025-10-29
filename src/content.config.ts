@@ -36,8 +36,25 @@ const processosArtisticos = defineCollection({
     }),
 })
 
+const quandoOsTipos = defineCollection({
+  loader: glob({
+    pattern: "**/*.mdx",
+    base: "./src/content/quando-os-tipos-se-movem",
+  }),
+  schema: ({ image }) =>
+    z.object({
+      titulo: z.string(),
+      rascunho: z.boolean(),
+      destaque_na_capa: z.boolean(),
+      imagem_para_indice: image(),
+      descricao: z.string(),
+      data_da_publicacao: z.coerce.date(),
+    }),
+})
+
 export const collections = {
   cliches,
   artistas,
   processosArtisticos,
+  quandoOsTipos,
 }
