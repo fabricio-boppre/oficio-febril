@@ -39,14 +39,7 @@ const title = processo.data.titulo
   <article>
     <Content />
     <h2>Artistas</h2>
-    <ul
-      class={css({
-        pb: "40px",
-        borderBottom: "1px",
-        borderBottomColor: "grayFont",
-        borderBottomStyle: "solid",
-      })}
-    >
+    <ul>
       {
         artistas.map((artista) => (
           <li>
@@ -57,6 +50,16 @@ const title = processo.data.titulo
         ))
       }
     </ul>
-    <ProcessosArtisticosNavLinks />
+    <section
+      class={css({
+        mt: "40px",
+        pt: "20px",
+        borderTop: "1px",
+        borderTopColor: "grayFont",
+        borderTopStyle: "solid",
+      })}
+    >
+      <ProcessosArtisticosNavLinks />
+    </section>
   </article>
 </InsideLayout>

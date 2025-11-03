@@ -3,7 +3,8 @@ import InsideLayout from "@layouts/InsideLayout.astro"
 import IndexWithImages from "@components/IndexWithImages.astro"
 import H1TitleWithLine from "@components/H1TitleWithLine.astro"
 import ProcessosArtisticosNavLinks from "@components/ProcessosArtisticosNavLinks.astro"
-import { getCollection } from "astro:content"
+import { css } from "@styled-system/css"
+import { getCollection, render } from "astro:content"
 
 // Let's call getCollection() inside of getStaticPaths() to have our collection data available for building static routes.
 // Then, we create the individual URL paths using the id property of each content entry.
@@ -19,7 +20,7 @@ export async function getStaticPaths() {
   return staticPathsAndProps
 }
 
-// For a specific processo, we get meta info, related artistas and render the content in a component called `Content`:
+// (...)
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const { artista } = Astro.props
 const esteArtistaId = artista.id
@@ -39,6 +40,7 @@ processosArtisticos.map((processo) => {
     }
   })
 })
+const { Content } = await render(artista)
 const preTitle = "Processos artísticos"
 const title = artista.data.nome
 ---
@@ -50,10 +52,22 @@ const title = artista.data.nome
 >
   <H1TitleWithLine preTitle={preTitle} title={title} />
   <article>
-    <ProcessosArtisticosNavLinks />
+    <Content />
+    <h2>Processos artísticos</h2>
     <IndexWithImages
       content={processosArtisticosDesteartista}
       route="processos-artisticos/processo"
     />
+    <section
+      class={css({
+        mt: "40px",
+        pt: "20px",
+        borderTop: "1px",
+        borderTopColor: "grayFont",
+        borderTopStyle: "solid",
+      })}
+    >
+      <ProcessosArtisticosNavLinks />
+    </section>
   </article>
 </InsideLayout>
