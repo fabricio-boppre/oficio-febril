@@ -192,7 +192,7 @@ A tela _sobre os projetos_, sendo uma página simples (e não uma coleção de d
 
 ### Processos artísticos <a name="processos-artisticos"></a>
 
-Antes de publicar ou editar processos, você deve se certificar de que seus artistas associados já estão publicados no site. Os arquivos MDX dos artistas encontram-se em https://github.com/fabricio-boppre/oficio-febril/tree/main/src/content/artistas. A _front matter_ do arquivo de um artista possui apenas seu nome. O nome do arquivo deve ser a versão _slug_ do nome do artista, e este nome _slug_ será utilizado na associação entre artistas e processos.
+Antes de publicar ou editar processos, você deve se certificar de que seus artistas associados já estão publicados no site. Os arquivos MDX dos artistas encontram-se em https://github.com/fabricio-boppre/oficio-febril/tree/main/src/content/artistas. A _front matter_ do arquivo de um artista possui apenas seu nome. Se você quiser acrescentar informações sobre os artistas (a serem exibidas na tela que cada artista possui dentro da seção _Processos artísticos_), você pode fazê-lo no corpo de seus respectivos arquivos MDX, logo abaixo da _front matter_, utilizando o formato Markdown. O nome do arquivo de cada artista deve ser a versão _slug_ de seu nome, e este nome _slug_ será utilizado na associação entre artistas e processos.
 
 Os _Processos artísticos_ estão cadastrados em arquivos MDX localizados nesta pasta: https://github.com/fabricio-boppre/oficio-febril/tree/main/src/content/processos-artisticos. Para publicar um novo processo, você deve submeter um novo arquivo com a seguinte _front matter_:
 
