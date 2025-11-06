@@ -1,8 +1,7 @@
 ---
 import InsideLayout from "@layouts/InsideLayout.astro"
 import H1TitleWithLine from "@components/H1TitleWithLine.astro"
-import { css } from "@styled-system/css"
-import { getCollection, render, getEntries } from "astro:content"
+import { getCollection, render } from "astro:content"
 
 // Let's call getCollection() inside of getStaticPaths() to have our collection data available for building static routes.
 // Then, we create the individual URL paths using the id property of each content entry.
