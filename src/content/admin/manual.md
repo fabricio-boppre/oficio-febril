@@ -9,6 +9,7 @@
 9. [Descrição detalhada das seções do site](#descricao-detalhada-das-secoes)
    1. [Tela inicial](#tela-inicial)
       1. [Clichês](#cliches)
+      2. [Febres](#febres)
    2. [Sobre os projetos](#sobre-os-projetos)
    3. [Processos artísticos](#processos-artisticos)
    4. [Quando os tipos se movem](#quando-os-tipos-se-movem)
@@ -185,6 +186,10 @@ Como nome do arquivo MDX e de sua imagem correspondente, utilize a slug do títu
 - maquina.jpg
 
 Para a imagem, utilize arquivos com no máximo 350px de largura e 450px de altura.
+
+#### Febres <a name="febres"></a>
+
+Os itens apresentados sob o título _Febres_ provêm das seções _Processos artísticos_, _Quando os tipos se movem_ e _A oficina e o ofício_. Para que um conteúdo destas seções seja exibido aqui, basta marcar o campo _destaque_na_capa_ em sua _front matter_ como _true_.
 
 ### Sobre os projetos <a name="sobre-os-projetos"></a>
 
