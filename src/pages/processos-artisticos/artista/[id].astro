@@ -53,11 +53,17 @@ const title = artista.data.nome
   <H1TitleWithLine preTitle={preTitle} title={title} />
   <article>
     <Content />
-    <h2>Processos artísticos</h2>
-    <IndexWithImages
-      content={processosArtisticosDesteartista}
-      route="processos-artisticos/processo"
-    />
+    {
+      processosArtisticosDesteartista.length > 0 && (
+        <section>
+          <h2>Processos artísticos</h2>
+          <IndexWithImages
+            content={processosArtisticosDesteartista}
+            route="processos-artisticos/processo"
+          />
+        </section>
+      )
+    }
     <section
       class={css({
         mt: "40px",
