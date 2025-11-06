@@ -1,0 +1,37 @@
+---
+import InsideLayout from "@layouts/InsideLayout.astro"
+import H1TitleWithLine from "@components/H1TitleWithLine.astro"
+import { getCollection, render } from "astro:content"
+
+// Let's call getCollection() inside of getStaticPaths() to have our collection data available for building static routes.
+// Then, we create the individual URL paths using the id property of each content entry.
+// Each page is passed the entire collection entry as a prop for use in your page template.
+export async function getStaticPaths() {
+  const aOficina = await getCollection("aOficina")
+  const staticPathsAndProps = aOficina.map((oficina) => {
+    return {
+      params: { id: oficina.id },
+      props: { oficina },
+    }
+  })
+  return staticPathsAndProps
+}
+
+// For a specific item, we get meta info and render the content in a component called `Content`:
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const { oficina } = Astro.props
+const { Content } = await render(oficina)
+const preTitle = "A oficina e o ofício"
+const title = oficina.data.titulo
+---
+
+<InsideLayout
+  title={preTitle + " / " + title}
+  description={oficina.data.descricao}
+  canonicalURL={canonicalURL}
+>
+  <H1TitleWithLine preTitle={preTitle} title={title} />
+  <article>
+    <Content />
+  </article>
+</InsideLayout>

@@ -261,4 +261,29 @@ Para a organização e nomenclatura dos arquivos, siga as sugestões descritas [
 
 ### A oficina e o ofício <a name="a-oficina-e-o-oficio"></a>
 
-[em construção]
+Os textos da seção _A oficina e o ofício_ estão cadastrados em arquivos MDX localizados nesta pasta: https://github.com/fabricio-boppre/oficio-febril/tree/main/src/content/a-oficina-e-o-oficio. Para publicar um novo texto, você deve submeter um novo arquivo com a seguinte _front matter_:
+
+```
+---
+titulo: Título do texto
+rascunho: true | false
+destaque_na_capa: true | false
+imagem_para_indice: ./titulo-do-texto-index.jpg
+descricao: Descrição do texto.
+data_da_publicacao: AAAA-MM-DD
+---
+```
+
+O campo _rascunho_ serve para que o texto não apareça de imediato no site após a sua reconstrução, para que você possa revisá-lo antes através de um link separado. Ver instruções em [Dicas gerais para a publicação de textos](#dicas-gerais).
+
+O campo _destaque_na_capa_ serve para indicar que este texto deve aparecer em destaque na capa do site. Assim como o campo _rascunho_ acima, seu valor deve ser _true_ ou _false_.
+
+O campo _imagem_para_indice_ serve para indicar o arquivo de imagem que será utilizado para ilustrar este texto nos índices em que ele será exibido. Utilize arquivos que tenham 200px de largura e 200px de altura, para manter estes índices bem alinhados e padronizados.
+
+O campo _descricao_ serve para descrever o texto em índices de sistemas de pesquisa (coomo, por exemplo, no Google), compartilhamentos em redes sociais etc. Deve ser um pequeno resumo do texto, com no máximo 160 caracteres.
+
+O campo _data_da_publicacao_ deve ser peenchido com a data da publicação deste conteúdo (no formato AAAA-MM-DD), que será utilizado para ordenar os itens nos índices em que eles aparecerem.
+
+Por fim, abaixo da _front matter_, insira o conteúdo de texto e imagens utilizando o formato Markdown.
+
+Para a organização e nomenclatura dos arquivos, siga as sugestões descritas [aqui](#publicando-novo-conteudo). Dicas gerais se encontram [aqui](#dicas-gerais).

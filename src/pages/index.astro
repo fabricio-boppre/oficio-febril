@@ -43,18 +43,29 @@ const quandoOsTiposDestaques = await getCollection(
     return data.rascunho !== true && data.destaque_na_capa === true
   },
 )
-quandoOsTiposDestaques.map((processo) => {
+quandoOsTiposDestaques.map((quando) => {
   destaques.push({
-    id: processo.id,
-    titulo: processo.data.titulo,
-    imagem_para_indice: processo.data.imagem_para_indice,
-    data_da_publicacao: processo.data.data_da_publicacao,
+    id: quando.id,
+    titulo: quando.data.titulo,
+    imagem_para_indice: quando.data.imagem_para_indice,
+    data_da_publicacao: quando.data.data_da_publicacao,
     route: "quando-os-tipos-se-movem",
   })
 })
 
 // Getting a_oficina_e_o_oficio that are destaque and pushing them inside destaques array:
-// [under construction]
+const aOficinaDestaques = await getCollection("aOficina", ({ data }) => {
+  return data.rascunho !== true && data.destaque_na_capa === true
+})
+aOficinaDestaques.map((oficina) => {
+  destaques.push({
+    id: oficina.id,
+    titulo: oficina.data.titulo,
+    imagem_para_indice: oficina.data.imagem_para_indice,
+    data_da_publicacao: oficina.data.data_da_publicacao,
+    route: "a-oficina-e-o-oficio",
+  })
+})
 
 // Sorting destaques:
 destaques.sort(

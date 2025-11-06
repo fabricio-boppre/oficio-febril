@@ -19,6 +19,14 @@ const quandoOsTipos = (
   (a, b) =>
     b.data.data_da_publicacao.valueOf() - a.data.data_da_publicacao.valueOf(),
 )
+const aOficina = (
+  await getCollection("aOficina", ({ data }) => {
+    return data.rascunho !== false
+  })
+).sort(
+  (a, b) =>
+    b.data.data_da_publicacao.valueOf() - a.data.data_da_publicacao.valueOf(),
+)
 ---
 
 <AdminLayout title="Rascunhos">
@@ -43,6 +51,6 @@ const quandoOsTipos = (
   </section>
   <section>
     <h2>A oficina e o ofício</h2>
-    <p>[em construção]</p>
+    <IndexWithImages content={aOficina} route="a-oficina-e-o-oficio" />
   </section>
 </AdminLayout>

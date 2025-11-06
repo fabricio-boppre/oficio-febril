@@ -1,6 +1,17 @@
 ---
 import InsideLayout from "@layouts/InsideLayout.astro"
 import H1TitleWithLine from "@components/H1TitleWithLine.astro"
+import IndexWithImages from "@components/IndexWithImages.astro"
+import { getCollection } from "astro:content"
+
+const aOficina = (
+  await getCollection("aOficina", ({ data }) => {
+    return data.rascunho !== true
+  })
+).sort(
+  (a, b) =>
+    b.data.data_da_publicacao.valueOf() - a.data.data_da_publicacao.valueOf(),
+)
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const title = "A oficina e o ofício"
@@ -9,7 +20,9 @@ const title = "A oficina e o ofício"
 <InsideLayout
   title={title}
   description="O coração do projeto é a constituição e manutenção de um ateliê de tipografia voltado para produções artísticas contemporâneas no Departamento de Artes Visuais da UFES."
-  canonicalURL={canonicalURL}
 >
   <H1TitleWithLine title={title} />
+  <article>
+    <IndexWithImages content={aOficina} route="a-oficina-e-o-oficio" />
+  </article>
 </InsideLayout>
