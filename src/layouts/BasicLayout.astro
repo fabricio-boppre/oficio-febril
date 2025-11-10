@@ -15,12 +15,12 @@ const { title, description, canonicalURL } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>ofício febril / {title}</title>
+    <title>Ofício Febril / {title}</title>
     <SEO
       description={description}
       openGraph={{
         basic: {
-          title: "ofício febril | " + title,
+          title: "Ofício Febril / " + title,
           type: "website",
           url: canonicalURL,
           image:
@@ -34,7 +34,7 @@ const { title, description, canonicalURL } = Astro.props
         card: "summary_large_image",
       }}
       extend={{
-        meta: [{ name: "title", content: "ofício febril | " + title }],
+        meta: [{ name: "title", content: "Ofício Febril / " + title }],
       }}
     />
   </head>
