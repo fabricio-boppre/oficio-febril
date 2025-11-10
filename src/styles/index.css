@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "DirectaSerifRegular";
-  src: url("/fonts/DirectaSerif-Regular.otf") format("opentype");
+  src: url("/fonts/DirectaSerif-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: "DirectaSerifSemiBold";
-  src: url("/fonts/DirectaSerif-SemiBold.otf") format("opentype");
+  src: url("/fonts/DirectaSerif-SemiBold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
