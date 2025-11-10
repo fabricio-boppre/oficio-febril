@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets"
+import { css } from "@styled-system/css"
+import externalLinkIcon from "@images/externalLinkIcon.svg"
+const { content } = Astro.props
+---
+
+<ul
+  class={css({
+    "& img": {
+      display: "inline-block",
+      height: "18px",
+      width: "18px",
+      ml: "5px",
+    },
+  })}
+>
+  {
+    content.map((item) => {
+      if (item.data.arquivo_pdf) {
+        return (
+          <li>
+            <a href={"/pdf/" + item.data.arquivo_pdf} target="_blank">
+              {item.data.titulo}
+              <Image src={externalLinkIcon} alt="" />
+            </a>
+          </li>
+        )
+      } else if (item.data.link_externo) {
+        return (
+          <li>
+            <a href={item.data.link_externo} target="_blank">
+              {item.data.titulo}
+              <Image src={externalLinkIcon} alt="" />
+            </a>
+          </li>
+        )
+      }
+      return (
+        <li>
+          <a href={"/pesquisa-e-publicacoes/" + item.id}>{item.data.titulo}</a>
+        </li>
+      )
+    })
+  }
+</ul>

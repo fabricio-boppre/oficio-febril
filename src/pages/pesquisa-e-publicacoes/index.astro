@@ -1,6 +1,17 @@
 ---
 import InsideLayout from "@layouts/InsideLayout.astro"
 import H1TitleWithLine from "@components/H1TitleWithLine.astro"
+import PesquisaEPublicacoesIndex from "@components/PesquisaEPublicacoesIndex.astro"
+import { getCollection } from "astro:content"
+
+const pesquisa = (
+  await getCollection("pesquisa", ({ data }) => {
+    return data.rascunho !== true
+  })
+).sort(
+  (a, b) =>
+    b.data.data_da_publicacao.valueOf() - a.data.data_da_publicacao.valueOf(),
+)
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const title = "Pesquisa e publicações"
@@ -12,4 +23,5 @@ const title = "Pesquisa e publicações"
   canonicalURL={canonicalURL}
 >
   <H1TitleWithLine title={title} />
+  <PesquisaEPublicacoesIndex content={pesquisa} />
 </InsideLayout>

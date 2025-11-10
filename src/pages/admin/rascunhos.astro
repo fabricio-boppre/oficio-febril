@@ -1,6 +1,7 @@
 ---
 import AdminLayout from "@layouts/AdminLayout.astro"
 import IndexWithImages from "@components/IndexWithImages.astro"
+import PesquisaEPublicacoesIndex from "@components/PesquisaEPublicacoesIndex.astro"
 import { getCollection } from "astro:content"
 
 const processosArtisticos = (
@@ -27,6 +28,14 @@ const aOficina = (
   (a, b) =>
     b.data.data_da_publicacao.valueOf() - a.data.data_da_publicacao.valueOf(),
 )
+const pesquisa = (
+  await getCollection("pesquisa", ({ data }) => {
+    return data.rascunho !== false
+  })
+).sort(
+  (a, b) =>
+    b.data.data_da_publicacao.valueOf() - a.data.data_da_publicacao.valueOf(),
+)
 ---
 
 <AdminLayout title="Rascunhos">
@@ -34,23 +43,42 @@ const aOficina = (
     Abaixo você tem acesso aos textos cadastrados como rascunhos, para que possa
     revisá-los antes de torná-los públicos:
   </p>
-  <section>
-    <h2>Processos artísticos</h2>
-    <IndexWithImages
-      content={processosArtisticos}
-      route="processos-artisticos/processo"
-    />
-  </section>
-  <section>
-    <h2>Quando os tipos se movem</h2>
-    <IndexWithImages content={quandoOsTipos} route="quando-os-tipos-se-movem" />
-  </section>
-  <section>
-    <h2>Pesquisa e publicações</h2>
-    <p>[em construção]</p>
-  </section>
-  <section>
-    <h2>A oficina e o ofício</h2>
-    <IndexWithImages content={aOficina} route="a-oficina-e-o-oficio" />
-  </section>
+  {
+    processosArtisticos.length > 0 && (
+      <section>
+        <h2>Processos artísticos</h2>
+        <IndexWithImages
+          content={processosArtisticos}
+          route="processos-artisticos/processo"
+        />
+      </section>
+    )
+  }
+  {
+    quandoOsTipos.length > 0 && (
+      <section>
+        <h2>Quando os tipos se movem</h2>
+        <IndexWithImages
+          content={quandoOsTipos}
+          route="quando-os-tipos-se-movem"
+        />
+      </section>
+    )
+  }
+  {
+    pesquisa.length > 0 && (
+      <section>
+        <h2>Pesquisa e publicações</h2>
+        <PesquisaEPublicacoesIndex content={pesquisa} />
+      </section>
+    )
+  }
+  {
+    aOficina.length > 0 && (
+      <section>
+        <h2>A oficina e o ofício</h2>
+        <IndexWithImages content={aOficina} route="a-oficina-e-o-oficio" />
+      </section>
+    )
+  }
 </AdminLayout>

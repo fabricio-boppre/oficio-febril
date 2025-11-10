@@ -68,10 +68,27 @@ const aOficina = defineCollection({
     }),
 })
 
+const pesquisa = defineCollection({
+  loader: glob({
+    pattern: "**/*.mdx",
+    base: "./src/content/pesquisa-e-publicacoes",
+  }),
+  schema: ({ image }) =>
+    z.object({
+      titulo: z.string(),
+      rascunho: z.boolean(),
+      descricao: z.string(),
+      arquivo_pdf: z.string().optional(),
+      link_externo: z.string().url().optional(),
+      data_da_publicacao: z.coerce.date(),
+    }),
+})
+
 export const collections = {
   cliches,
   artistas,
   processosArtisticos,
   quandoOsTipos,
   aOficina,
+  pesquisa,
 }
