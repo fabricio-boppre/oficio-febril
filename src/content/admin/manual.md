@@ -14,6 +14,9 @@
    3. [Processos artísticos](#processos-artisticos)
    4. [Quando os tipos se movem](#quando-os-tipos-se-movem)
    5. [Pesquisa e publicações](#pesquisa-e-publicacoes)
+      1. [Arquivo PDF](#arquivo-pdf)
+      2. [Link externo](#link-externo)
+      3. [Link interno](#link-interno)
    6. [A oficina e o ofício](#a-oficina-e-o-oficio)
 
 --
@@ -40,7 +43,7 @@ Os arquivos e subpastas utilizam o formato de nomenclatura conhecido como _slug_
 
 ## Formato de um arquivo de conteúdo <a name="formato-de-um-arquivo"></a>
 
-Os arquivos de conteúdo devem possuir a terminação MDX. Por exemplo, o arquivo _grande-festa.mdx_, armazenado na subpasta _processos-artisticos_ e com o conteúdo exibido abaixo, será o responsável pela tela _Grande festa_ a ser exibida na seção _Processos artísticos_:
+Os arquivos de conteúdo devem possuir a terminação .mdx. Por exemplo, o arquivo _grande-festa.mdx_, armazenado na subpasta _processos-artisticos_ e com o conteúdo exibido abaixo, será o responsável pela tela _Grande festa_ a ser exibida na seção _Processos artísticos_:
 
 ```
 ---
@@ -168,6 +171,8 @@ A extensão _Astro Embed_ também pode ser utilizada para exibir vídeos do Vime
 
 ### Tela inicial <a name="tela-inicial"></a>
 
+A tela inicial é composta por algumas seções. Abaixo seguem as instruções para cada uma delas:
+
 #### Clichês <a name="cliches"></a>
 
 Os clichês estão cadastrados em arquivos MDX localizados nesta pasta: https://github.com/fabricio-boppre/oficio-febril/tree/main/src/content/cliches. Para publicar um novo clichê, você deve submeter um novo arquivo com a seguinte _front matter_:
@@ -262,7 +267,72 @@ Para a organização e nomenclatura dos arquivos, siga as sugestões descritas [
 
 ### Pesquisa e publicações <a name="pesquisa-e-publicacoes"></a>
 
-[em construção]
+Os itens da seção _Pesquisa e publicações_ estão cadastrados em arquivos MDX localizados nesta pasta: https://github.com/fabricio-boppre/oficio-febril/tree/main/src/content/pesquisa-e-publicacoes. Estes itens podem ser de três tipos diferentes: links para arquivos no formato PDF, links para telas de sites externos e links para telas do próprio site do Ofício Febril. O comportamento de cada item será definido pela _front matter_ de seu arquivo MDX correspondente. Abaixo seguem as instruções sobre como publicar cada tipo:
+
+#### Arquivo PDF <a name="arquivo-pdf"></a>
+
+Antes da publicação de um link para um arquivo PDF, é necessário publicar este arquivo. Diferentemente das imagens, que podem ser publicadas nas mesmas pastas dos arquivos MDX que as utilizam, arquivos PDF devem ser publicados em uma pasta separada específica. Portanto a publicação de um link para um PDF deve ser feita em duas etapas: primeiro, publique o arquivo PDF na pasta https://github.com/fabricio-boppre/oficio-febril/tree/main/public/pdf. Finalizado o _workflow_ de reconstrução do site, agora você deve publicar o devido arquivo MDX na pasta https://github.com/fabricio-boppre/oficio-febril/tree/main/src/content/pesquisa-e-publicacoes e com a seguinte _front matter_:
+
+```
+---
+titulo: Título do item
+rascunho: true | false
+arquivo_pdf: ./titulo-do-item.pdf
+data_da_publicacao: AAAA-MM-DD
+---
+```
+
+O campo _titulo_ será o texto exibido como link para o PDF.
+
+O campo _rascunho_ serve para que o item não apareça de imediato no site após a sua reconstrução, para que você possa revisá-lo antes através de um link separado. Ver instruções em [Dicas gerais para a publicação de textos](#dicas-gerais).
+
+O campo _arquivo_pdf_ é o título do arquivo PDF que você publicou na etapa anterior.
+
+O campo _data_da_publicacao_ deve ser peenchido com a data da publicação deste conteúdo (no formato AAAA-MM-DD), que será utilizado para ordenar os itens nos índices em que eles aparecerem.
+
+#### Link externo <a name="link-externo"></a>
+
+Itens no formato de link para um outro site devem possuir a seguinte _front matter_:
+
+```
+---
+titulo: Título do item
+rascunho: true | false
+link_externo: https://www.endereco.com.br
+data_da_publicacao: AAAA-MM-DD
+---
+```
+
+O campo _titulo_ será o texto exibido como link para o site externo.
+
+O campo _rascunho_ serve para que o item não apareça de imediato no site após a sua reconstrução, para que você possa revisá-lo antes através de um link separado. Ver instruções em [Dicas gerais para a publicação de textos](#dicas-gerais).
+
+O campo _link_externo_ é o endereço para o qual o link deve remeter (não esqueça do http:// ou https://).
+
+O campo _data_da_publicacao_ deve ser peenchido com a data da publicação deste conteúdo (no formato AAAA-MM-DD), que será utilizado para ordenar os itens nos índices em que eles aparecerem.
+
+#### Link interno <a name="link-interno"></a>
+
+Por último, links para conteúdos publicados no próprio site do Ofício Febril têm a seguinte _front matter_:
+
+```
+---
+titulo: Título do item
+rascunho: true | false
+descricao: Uma descrição deste conteúdo.
+data_da_publicacao: AAAA-MM-DD
+---
+```
+
+O campo _titulo_ será o texto exibido como link para este item.
+
+O campo _rascunho_ serve para que o item não apareça de imediato no site após a sua reconstrução, para que você possa revisá-lo antes através de um link separado. Ver instruções em [Dicas gerais para a publicação de textos](#dicas-gerais).
+
+O campo _descricao_ serve para descrever o texto em índices de sistemas de pesquisa (coomo, por exemplo, no Google), compartilhamentos em redes sociais etc. Deve ser um pequeno resumo do texto, com no máximo 160 caracteres. Note que nos dois outros formatos (links para arquivos PDF ou sites externo) este campo não existe, mas para links que abrirão telas no próprio site do Ofício Febril, ele é obrigatório.
+
+O campo _data_da_publicacao_ deve ser peenchido com a data da publicação deste conteúdo (no formato AAAA-MM-DD), que será utilizado para ordenar os itens nos índices em que eles aparecerem.
+
+Por fim, o conteúdo da tela deste item deve ser publicado em formato Markdown logo abaixo da _front matter_.
 
 ### A oficina e o ofício <a name="a-oficina-e-o-oficio"></a>
 

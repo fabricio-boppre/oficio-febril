@@ -77,7 +77,7 @@ const pesquisa = defineCollection({
     z.object({
       titulo: z.string(),
       rascunho: z.boolean(),
-      descricao: z.string(),
+      descricao: z.string().optional(),,
       arquivo_pdf: z.string().optional(),
       link_externo: z.string().url().optional(),
       data_da_publicacao: z.coerce.date(),
