@@ -48,11 +48,11 @@ Os arquivos de conteúdo devem possuir a terminação .mdx. Por exemplo, o arqui
 
 ```
 ---
-titulo: Grande festa
+titulo: "Grande festa"
 rascunho: true | false
 destaque_na_capa: true | false
 imagem_para_indice: ./grande-festa-index.jpg
-descricao: Descrição do processo artístico.
+descricao: "Descrição do processo artístico."
 data_da_publicacao: YYYY-MM-DD
 artistas:
   - slug_do_artista_1
@@ -150,7 +150,7 @@ Para publicar um vídeo do YoutTube junto do conteúdo de uma tela, é possível
 
 ```
 ---
-titulo: Grande festa
+titulo: "Grande festa"
 rascunho: true | false
 (...)
 ---
@@ -180,8 +180,8 @@ Os clichês estão cadastrados em arquivos MDX localizados nesta pasta: https://
 
 ```
 ---
-titulo: título do clichê
-descricao: autoria, créditos etc.
+titulo: "título do clichê"
+descricao: "autoria, créditos etc."
 imagem: ./slug_do_cliche.jpg
 ---
 ```
@@ -213,11 +213,11 @@ Os _Processos artísticos_ estão cadastrados em arquivos MDX localizados nesta 
 
 ```
 ---
-titulo: Processo artístico
+titulo: "Processo artístico"
 rascunho: true | false
 destaque_na_capa: true | false
 imagem_para_indice: ./processo-de-teste-index.jpg
-descricao: Descrição do processo artístico.
+descricao: "Descrição do processo artístico."
 data_da_publicacao: AAAA-MM-DD
 artistas:
   - diego-rayck
@@ -247,11 +247,11 @@ Os textos da seção _Quando os tipos se movem_ estão cadastrados em arquivos M
 
 ```
 ---
-titulo: Título do texto
+titulo: "Título do texto"
 rascunho: true | false
 destaque_na_capa: true | false
 imagem_para_indice: ./titulo-do-texto-index.jpg
-descricao: Descrição do texto.
+descricao: "Descrição do texto."
 data_da_publicacao: AAAA-MM-DD
 ---
 ```
@@ -280,7 +280,7 @@ Antes da publicação de um link para um arquivo PDF, é necessário publicar es
 
 ```
 ---
-titulo: Título do item
+titulo: "Título do item"
 rascunho: true | false
 arquivo_pdf: ./titulo-do-item.pdf
 data_da_publicacao: AAAA-MM-DD
@@ -301,7 +301,7 @@ Itens no formato de link para um outro site devem possuir a seguinte _front matt
 
 ```
 ---
-titulo: Título do item
+titulo: "Título do item"
 rascunho: true | false
 link_externo: https://www.endereco.com.br
 data_da_publicacao: AAAA-MM-DD
@@ -322,9 +322,9 @@ Por último, links para conteúdos publicados no próprio site do Ofício Febril
 
 ```
 ---
-titulo: Título do item
+titulo: "Título do item"
 rascunho: true | false
-descricao: Uma descrição deste conteúdo.
+descricao: "Uma descrição deste conteúdo."
 data_da_publicacao: AAAA-MM-DD
 ---
 ```
@@ -345,11 +345,11 @@ Os textos da seção _A oficina e o ofício_ estão cadastrados em arquivos MDX 
 
 ```
 ---
-titulo: Título do texto
+titulo: "Título do texto"
 rascunho: true | false
 destaque_na_capa: true | false
 imagem_para_indice: ./titulo-do-texto-index.jpg
-descricao: Descrição do texto.
+descricao: "Descrição do texto."
 data_da_publicacao: AAAA-MM-DD
 ---
 ```
