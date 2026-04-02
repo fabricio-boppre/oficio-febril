@@ -143,7 +143,7 @@ Conheça a artista [Aline Dias](https://www.oficiofebril.com.br/processos-artist
 Faça download do PDF clicando [aqui](https://www.oficiofebril.com.br/pdf/teste-pdf.pdf).
 ```
 
-Mas, em se tratando de telas ou arquivos internos, você pode omitir a raiz do edenreço do site. Os exemplos acima ficam assim:
+Mas, em se tratando de telas ou arquivos internos, você pode omitir a raiz do endereço do site. Os exemplos acima ficam assim:
 
 ```
 Conheça a artista [Aline Dias](/processos-artisticos/artista/aline-dias/).
