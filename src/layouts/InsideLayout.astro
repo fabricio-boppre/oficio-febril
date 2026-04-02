@@ -32,6 +32,13 @@ const { title, description, canonicalURL } = Astro.props
       "& lite-youtube, astro-embed-tweet, lite-vimeo": {
         mb: "basicContentBlockBottomMartin",
       },
+      "& figure > lite-youtube, astro-embed-tweet, lite-vimeo": {
+        mb: "0px",
+        "&~ p > em ": {
+          textStyle: "spanText",
+          fontStyle: "normal",
+        },
+      },
       "& img + em": {
         textStyle: "spanText",
         fontStyle: "normal",

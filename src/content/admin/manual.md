@@ -5,7 +5,7 @@
 5. [Publicando novo conteúdo](#publicando-novo-conteudo)
 6. [Editando conteúdo](#editando-conteudo)
 7. [Dicas gerais para a publicação de textos](#dicas-gerais)
-8. [Publicando vídeos](#publicando-videos)
+8. [Publicando vídeos e imagens e suas legendas](#publicando-videos-imagens)
 9. [Descrição detalhada das seções do site](#descricao-detalhada-das-secoes)
    1. [Tela inicial](#tela-inicial)
       1. [Clichês](#cliches)
@@ -96,14 +96,6 @@ Explicando este formato:
 2. Ainda na _front matter_, imagens devem ser preenchidas com o nome do arquivo precedido por um ponto e uma barra (./). Datas devem obedecer ao formato AAAA-MM-DD;
 3. A _front matter_ dos arquivos pode variar de acordo com o layout de cada seção. Por exemplo, uma seção pode ter seu índice ilustrado por imagens enquanto outra tem o índice formado apenas por links textuais; neste caso, a _front matter_ dos arquivos deste segunda seção não teria o item _imagem_ilustrativa_;
 4. Após o fechamento da _front matter_ vem o conteúdo propriamente dito. Para formatação, utilize códigos Markdown, que servem para formatar textos que serão exibidos em sites. Alguns dos códigos mais comuns estão no exemplo acima. No link a seguir estão explicados todos os códigos Markdown: https://www.markdownguide.org/basic-syntax/. Neste outro é possível fazer testes online: https://markdownlivepreview.com/.
-5. Para exibir imagens, podemos recorrer também ao Markdown. Uma imagem é inserida da seguinte forma:
-
-```
-![Texto alternativo](./arquivo.jpg)
-_Legenda_
-```
-
-_Texto alternativo_ é o texto a ser exibido em caso de falha na exibição da imagem ou a ser lido por dispositivos de leitura de sites para deficientes visuais; _arquivo.jpg_ é o nome do arquivo da imagem; _Legenda_ é a legenda da imagem (opcional). Não deve haver linha em branco entre estas duas linhas.
 
 ## Publicando novo conteúdo <a name="publicando-novo-conteudo"></a>
 
@@ -161,9 +153,25 @@ Faça download do PDF clicando [aqui](/pdf/teste-pdf.pdf).
 
 (Este segundo método é mais recomendável pois se algum dia o endereço do site mudar, os links continuarão funcionando posto que serão sempre relativos ao endereço corrente do site.)
 
-## Publicando vídeos <a name="publicando-videos"></a>
+## Publicando vídeos e imagens e suas legendas <a name="publicando-videos-imagens"></a>
 
-Para publicar um vídeo do YoutTube junto do conteúdo de uma tela, é possível simplesmente colar o código de integração que o próprio YouTube oferece para seus vídeos. Esta funcionalidade do YouTube, no entanto, é insatisfatória pois os vídeos assim publicados não são responsivos, ou seja, são sempre exibidos com uma largura fixa que não se adequa à visualização em telas pequenas. Para resolver este problema, podemos utilizar uma solução independente chamada _Astro Embed_. Trata-se de uma extensão que deve ser invocada no começo do arquivo MDX. Segue exemplo abaixo:
+Para exibir imagens, podemos recorrer também ao Markdown. Uma imagem é inserida da seguinte forma:
+
+```
+![Texto alternativo](./arquivo.jpg)
+_Legenda_
+```
+
+_Texto alternativo_ é o texto a ser exibido em caso de falha na exibição da imagem ou a ser lido por dispositivos de leitura de sites para deficientes visuais; _arquivo.jpg_ é o nome do arquivo da imagem (armazenado sempre na mesma pasta do arquivo MDX que o referencia); _Legenda_ é a legenda (opcional) da imagem a ser exibida logo embaixo e com estilização própria (fonte menor). Não deve haver linha em branco entre estas duas linhas.
+
+Por uma questão de convenção, a legenda vai entre underlines (\_). Para formatar o texto dentro da legenda é possível continuar usando o Markdown, tomando apenas o cuidado para usar apenas asteriscos (\*) para itálico ou negrito:
+
+```
+![Texto alternativo](./arquivo.jpg)
+_Legenda com texto em *itálico* e **negrito**_
+```
+
+Para publicar um vídeo do YouTube, é possível simplesmente colar o código de integração que o próprio YouTube oferece para seus vídeos. Esta funcionalidade do YouTube, no entanto, é insatisfatória pois os vídeos assim publicados não são responsivos, ou seja, são sempre exibidos com uma largura fixa que não se adequa à visualização em telas pequenas. Para resolver este problema, podemos utilizar uma solução independente chamada _Astro Embed_. Trata-se de uma extensão que deve ser invocada no começo do arquivo MDX. Segue exemplo abaixo:
 
 ```
 ---
@@ -181,9 +189,22 @@ Veja este bonito vídeo abaixo:
 Aqui continua o texto.
 ```
 
-A linha que vem logo embaixo da _front matter_, que inicia com _import_, deve ser copiada exatamente da maneira exemplificada acima (ela não será exibida no texto a ser publicado no site). O vídeo aparecerá onde for inserido o módulo _< YouTube id="URL do vídeo" >_, que deve ser escrito examente como exemplificado acima, substituindo apenas o endereço do vídeo de exemplo pelo do vídeo que você quer exibir.
+A linha que vem logo embaixo da _front matter_, que inicia com _import_, deve ser copiada exatamente da maneira exemplificada acima (ela não será exibida no texto a ser publicado no site). O vídeo aparecerá onde for inserido o módulo _<YouTube id="URL do vídeo"\>_, que deve ser escrito examente como exemplificado acima, substituindo apenas o endereço do vídeo de exemplo pelo do vídeo que você quer exibir.
 
 A extensão _Astro Embed_ também pode ser utilizada para exibir vídeos do Vimeo e tweets do Twitter. Clique [aqui](https://astro-embed.netlify.app/getting-started/#supported-services) para mais instruções.
+
+Se for necessário acrescentar uma legenda ao vídeo, é necessário uma codificação extra. O formato é exatamente o mesmo das legendas para imagens, porém, envolvendo o código do vídeo e da legenda, é necessário acrescentar uma tag de abertura _<figure\>_ e uma de fechamento _</figure\>_. Por exemplo:
+
+```
+import { Vimeo } from "astro-embed"
+
+<figure>
+<Vimeo id="https://vimeo.com/1178014682?fl=ip&fe=ec" />
+_Legenda deste vídeo_
+</figure>
+```
+
+De resto, a legenda funciona como nas imagens: utilize asteriscos (\*) para itálico ou negrito.
 
 ## Descrição detalhada das seções do site <a name="descricao-detalhada-das-secoes"></a>
 
