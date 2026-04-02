@@ -193,7 +193,7 @@ A linha que vem logo embaixo da _front matter_, que inicia com _import_, deve se
 
 A extensão _Astro Embed_ também pode ser utilizada para exibir vídeos do Vimeo e tweets do Twitter. Clique [aqui](https://astro-embed.netlify.app/getting-started/#supported-services) para mais instruções.
 
-Se for necessário acrescentar uma legenda ao vídeo, é necessário uma codificação extra. O formato é exatamente o mesmo das legendas para imagens, porém, envolvendo o código do vídeo e da legenda, é necessário acrescentar uma tag de abertura _<figure\>_ e uma de fechamento _</figure\>_. Por exemplo:
+Se for necessário acrescentar uma legenda ao vídeo, é preciso adicionar uma codificação extra. O formato é exatamente o mesmo das legendas para imagens, porém, envolvendo o código do vídeo e da legenda, acrescentamos uma tag de abertura _<figure\>_ e uma de fechamento _</figure\>_. Por exemplo:
 
 ```
 import { Vimeo } from "astro-embed"
