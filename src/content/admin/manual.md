@@ -143,6 +143,23 @@ Para editar um conteúdo previamente publicado no site, você deve localizar seu
 - No corpo de um texto, para criar um novo parágrafo, você deve deixar uma linha em branco entre o bloco anterior (se houver) e o posterior (se houver). Se não existir esta linha em branco, o bloco de texto será antecedido ou precedido por uma simples quebra de linha em relação aos seu(s) bloco(s) vizinho(s). Este comportamento vale para qualquer bloco: textos (parágrafos), listas, imagens, vídeos etc.
 - Para publicar subtítulos ao longo dos textos, utilize apenas a marcação de segundo nível em diante, uma vez que a marcação de primeiro nível é reservada no layout para o título principal da tela. Na formatação Markdown, subtítulos são definidos com o caracter cerquilha (#) antes do título, sendo que a quantidade de cerquilhas define o nível. Veja exemplos [aqui](#formato-de-um-arquivo).
 - Se você quiser publicar um novo conteúdo mas avaliá-lo e revisá-lo antes de torná-lo público, você pode cadastrar o campo _rascunho_ na _front matter_ como _true_. Desta forma este texto não irá imediatamente aparecer no site público, mas estará disponível para revisão na tela de [administração de rascunhos](/admin/rascunhos). Feita a revisão, basta [editar o conteúdo](#editando-conteudo), configurando desta vez o campo _rascunho_ como _false_. Então, na reconstrução que irá se seguir, o texto irá aparecer no site público.
+- Para a publicação de links internos (links que aponta para telas ou arquivos dentro do próprio site), você pode utilizar o formato padrão do Markdown com o endereço completo desejado para o link:
+
+```
+Conheça a artista [Aline Dias](https://www.oficiofebril.com.br/processos-artisticos/artista/aline-dias/).
+
+Faça download do PDF clicando [aqui](https://www.oficiofebril.com.br/pdf/teste-pdf.pdf).
+```
+
+Mas, em se tratando de telas ou arquivos internos, você pode omitir a raiz do edenreço do site. Os exemplos acima ficam assim:
+
+```
+Conheça a artista [Aline Dias](/processos-artisticos/artista/aline-dias/).
+
+Faça download do PDF clicando [aqui](/pdf/teste-pdf.pdf).
+```
+
+(Este segundo método é mais recomendável pois se algum dia o endereço do site mudar, os links continuarão funcionando posto que serão sempre relativos ao endereço corrente do site.)
 
 ## Publicando vídeos <a name="publicando-videos"></a>
 
