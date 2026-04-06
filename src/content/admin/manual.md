@@ -321,6 +321,7 @@ Antes da publicação de um link para um arquivo PDF, é necessário publicar es
 titulo: "Título do item"
 rascunho: true | false
 arquivo_pdf: ./titulo-do-item.pdf
+descricao: "Descrição do item."
 data_da_publicacao: AAAA-MM-DD
 ---
 ```
@@ -330,6 +331,8 @@ O campo _titulo_ será o texto exibido como link para o PDF.
 O campo _rascunho_ serve para que o item não apareça de imediato no site após a sua reconstrução, para que você possa revisá-lo antes através de um link separado. Ver instruções em [Dicas gerais para a publicação de textos](#dicas-gerais).
 
 O campo _arquivo_pdf_ é o título do arquivo PDF que você publicou na etapa anterior.
+
+O campo _descricao_ serve para exibir ao visitante um pequeno resumo ou descrição de cada item.
 
 O campo _data_da_publicacao_ deve ser peenchido com a data da publicação deste conteúdo (no formato AAAA-MM-DD), que será utilizado para ordenar os itens nos índices em que eles aparecerem.
 
@@ -342,6 +345,7 @@ Itens no formato de link para um outro site devem possuir a seguinte _front matt
 titulo: "Título do item"
 rascunho: true | false
 link_externo: https://www.endereco.com.br
+descricao: "Descrição do item."
 data_da_publicacao: AAAA-MM-DD
 ---
 ```
@@ -351,6 +355,8 @@ O campo _titulo_ será o texto exibido como link para o site externo.
 O campo _rascunho_ serve para que o item não apareça de imediato no site após a sua reconstrução, para que você possa revisá-lo antes através de um link separado. Ver instruções em [Dicas gerais para a publicação de textos](#dicas-gerais).
 
 O campo _link_externo_ é o endereço para o qual o link deve remeter (não esqueça do http:// ou https://).
+
+O campo _descricao_ serve para exibir ao visitante um pequeno resumo ou descrição de cada item.
 
 O campo _data_da_publicacao_ deve ser peenchido com a data da publicação deste conteúdo (no formato AAAA-MM-DD), que será utilizado para ordenar os itens nos índices em que eles aparecerem.
 
@@ -362,7 +368,7 @@ Por último, links para conteúdos publicados no próprio site do Ofício Febril
 ---
 titulo: "Título do item"
 rascunho: true | false
-descricao: "Uma descrição deste conteúdo."
+descricao: "Descrição do item."
 data_da_publicacao: AAAA-MM-DD
 ---
 ```
@@ -371,7 +377,7 @@ O campo _titulo_ será o texto exibido como link para este item.
 
 O campo _rascunho_ serve para que o item não apareça de imediato no site após a sua reconstrução, para que você possa revisá-lo antes através de um link separado. Ver instruções em [Dicas gerais para a publicação de textos](#dicas-gerais).
 
-O campo _descricao_ serve para descrever o texto em índices de sistemas de pesquisa (coomo, por exemplo, no Google), compartilhamentos em redes sociais etc. Deve ser um pequeno resumo do texto, com no máximo 160 caracteres. Note que nos dois outros formatos (links para arquivos PDF ou sites externo) este campo não existe, mas para links que abrirão telas no próprio site do Ofício Febril, ele é obrigatório.
+O campo _descricao_ serve para exibir ao visitante um pequeno resumo ou descrição de cada item.
 
 O campo _data_da_publicacao_ deve ser peenchido com a data da publicação deste conteúdo (no formato AAAA-MM-DD), que será utilizado para ordenar os itens nos índices em que eles aparecerem.
 

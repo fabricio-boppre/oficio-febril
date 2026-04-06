@@ -17,28 +17,29 @@ const { content } = Astro.props
 >
   {
     content.map((item) => {
-      if (item.data.arquivo_pdf) {
-        return (
-          <li>
-            <a href={"/pdf/" + item.data.arquivo_pdf} target="_blank">
-              {item.data.titulo}
-              <Image src={externalLinkIcon} alt="" />
-            </a>
-          </li>
-        )
-      } else if (item.data.link_externo) {
-        return (
-          <li>
-            <a href={item.data.link_externo} target="_blank">
-              {item.data.titulo}
-              <Image src={externalLinkIcon} alt="" />
-            </a>
-          </li>
-        )
-      }
+      const href = item.data.arquivo_pdf
+        ? `/pdf/${item.data.arquivo_pdf}`
+        : (item.data.link_externo ?? null)
+
+      const isExternal = Boolean(href)
+
       return (
-        <li>
-          <a href={"/pesquisa-e-publicacoes/" + item.id}>{item.data.titulo}</a>
+        <li key={item.id}>
+          <a
+            href={href ?? `/pesquisa-e-publicacoes/${item.id}`}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener noreferrer" : undefined}
+          >
+            {item.data.titulo}
+            {isExternal && <Image src={externalLinkIcon} alt="Link externo" />}
+          </a>
+          <div
+            class={css({
+              ml: "20px",
+            })}
+          >
+            {item.data.descricao}
+          </div>
         </li>
       )
     })
