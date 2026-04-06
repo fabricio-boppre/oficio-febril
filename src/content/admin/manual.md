@@ -5,7 +5,7 @@
 5. [Publicando novo conteúdo](#publicando-novo-conteudo)
 6. [Editando conteúdo](#editando-conteudo)
 7. [Dicas gerais para a publicação de textos](#dicas-gerais)
-8. [Publicando vídeos e imagens e suas legendas](#publicando-videos-imagens)
+8. [Publicando sons, vídeos e imagens e suas legendas](#publicando-videos-imagens)
 9. [Descrição detalhada das seções do site](#descricao-detalhada-das-secoes)
    1. [Tela inicial](#tela-inicial)
       1. [Clichês](#cliches)
@@ -153,7 +153,7 @@ Faça download do PDF clicando [aqui](/pdf/teste-pdf.pdf).
 
 (Este segundo método é mais recomendável pois se algum dia o endereço do site mudar, os links continuarão funcionando posto que serão sempre relativos ao endereço corrente do site.)
 
-## Publicando vídeos e imagens e suas legendas <a name="publicando-videos-imagens"></a>
+## Publicando sons, vídeos e imagens e suas legendas <a name="publicando-videos-imagens"></a>
 
 Para exibir imagens, podemos recorrer também ao Markdown. Uma imagem é inserida da seguinte forma:
 
@@ -171,7 +171,7 @@ Por uma questão de convenção, a legenda vai entre underlines (\_). Para forma
 _Legenda com texto em *itálico* e **negrito**_
 ```
 
-Para publicar um vídeo do YouTube, é possível simplesmente colar o código de integração que o próprio YouTube oferece para seus vídeos. Esta funcionalidade do YouTube, no entanto, é insatisfatória pois os vídeos assim publicados não são responsivos, ou seja, são sempre exibidos com uma largura fixa que não se adequa à visualização em telas pequenas. Para resolver este problema, podemos utilizar uma solução independente chamada _Astro Embed_. Trata-se de uma extensão que deve ser invocada no começo do arquivo MDX. Segue exemplo abaixo:
+Para exibir um vídeo publicado do YouTube, é possível simplesmente colar o código de integração que o próprio YouTube oferece para seus vídeos. Esta funcionalidade do YouTube, no entanto, é insatisfatória pois os vídeos assim publicados não são responsivos, ou seja, são sempre exibidos com uma largura fixa que não se adequa à visualização em telas pequenas. Para resolver este problema, podemos utilizar uma solução independente chamada _Astro Embed_. Trata-se de uma extensão que deve ser invocada no começo do arquivo MDX. Segue exemplo abaixo:
 
 ```
 ---
@@ -205,6 +205,27 @@ _Legenda deste vídeo_
 ```
 
 De resto, a legenda funciona como nas imagens: utilize asteriscos (\*) para itálico ou negrito.
+
+Para exibir sons publicados no SoundCloud, não é necessário usar a solução _Astro Embed_. Você pode simplesmente copiar o código de integração do som no site do SoundCloud e copiá-lo diretamente no arquivo MDX. É necessário apenas tomar o seguinte cuidado: o código de integração do SoundCloud traz embutida uma legenda sob o player, cuja estilização conflita com os estilos do próprio site do Ofício Febril. Exemplo:
+
+```
+<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2284841090&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/n4tee" title="n4tee" target="_blank" style="color: #cccccc; text-decoration: none;">n4tee</a> · <a href="https://soundcloud.com/n4tee/like-dat-teaser" title="like dat [KATZ001]" target="_blank" style="color: #cccccc; text-decoration: none;">like dat [KATZ001]</a></div>
+```
+
+Recomenda-se remover essa legenda embutida (e, se necessário, incluir uma legenda de acordo com instruções abaixo). Para isso, você deve localizar no código de integração a tag de fechamento _</iframe\>_ e excluir tudo que vem depois dela. O exemplo acima se torna:
+
+```
+<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2284841090&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+```
+
+Se for necessário acrescentar uma legenda ao som, basta seguir as mesmas instruções das legendas nos cídeos, ou seja, envolver o código do vídeo e da legenda com a tag _</igure\>_. Por exemplo:
+
+```
+<figure>
+<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2284841090&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+_Legenda deste som. Você pode usar *Markdown*._
+</figure>
+```
 
 ## Descrição detalhada das seções do site <a name="descricao-detalhada-das-secoes"></a>
 
@@ -411,3 +432,7 @@ O campo _data_da_publicacao_ deve ser peenchido com a data da publicação deste
 Por fim, abaixo da _front matter_, insira o conteúdo de texto e imagens utilizando o formato Markdown.
 
 Para a organização e nomenclatura dos arquivos, siga as sugestões descritas [aqui](#publicando-novo-conteudo). Dicas gerais se encontram [aqui](#dicas-gerais).
+
+```
+
+```

@@ -29,16 +29,17 @@ const { title, description, canonicalURL } = Astro.props
       "& ol": { layerStyle: "basicListsOrdered" },
       "& ul": { layerStyle: "basicListsUnordered" },
       "& h2, h3, h4, p, ul, ol, pre": { layerStyle: "basicText" },
-      "& lite-youtube, astro-embed-tweet, lite-vimeo": {
+      "& lite-youtube, & astro-embed-tweet, & lite-vimeo, & iframe": {
         mb: "basicContentBlockBottomMartin",
       },
-      "& figure > lite-youtube, astro-embed-tweet, lite-vimeo": {
-        mb: "0px",
-        "&~ p > em ": {
-          textStyle: "spanText",
-          fontStyle: "normal",
+      "& figure > lite-youtube, & figure > astro-embed-tweet, & figure > lite-vimeo, & figure > iframe":
+        {
+          mb: "0px",
+          "&~ p > em ": {
+            textStyle: "spanText",
+            fontStyle: "normal",
+          },
         },
-      },
       "& img + em": {
         textStyle: "spanText",
         fontStyle: "normal",
