@@ -212,13 +212,13 @@ Para exibir sons publicados no SoundCloud, não é necessário usar a solução 
 <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2284841090&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/n4tee" title="n4tee" target="_blank" style="color: #cccccc; text-decoration: none;">n4tee</a> · <a href="https://soundcloud.com/n4tee/like-dat-teaser" title="like dat [KATZ001]" target="_blank" style="color: #cccccc; text-decoration: none;">like dat [KATZ001]</a></div>
 ```
 
-Recomenda-se remover essa legenda embutida (e, se necessário, incluir uma legenda de acordo com instruções abaixo). Para isso, você deve localizar no código de integração a tag de fechamento _</iframe\>_ e excluir tudo que vem depois dela. O exemplo acima se torna:
+Recomenda-se remover essa legenda embutida (e, se necessário, incluir uma legenda própria de acordo com instruções abaixo). Para isso, você deve localizar no código de integração a tag de fechamento _</iframe\>_ e excluir tudo que vem depois dela. O exemplo acima se torna:
 
 ```
 <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2284841090&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 ```
 
-Se for necessário acrescentar uma legenda ao som, basta seguir as mesmas instruções das legendas nos cídeos, ou seja, envolver o código do vídeo e da legenda com a tag _</igure\>_. Por exemplo:
+Se for necessário acrescentar uma legenda ao som, basta seguir as mesmas instruções das legendas nos vídeos, ou seja, envolver o código do vídeo e da legenda com a tag _</igure\>_. Por exemplo:
 
 ```
 <figure>
