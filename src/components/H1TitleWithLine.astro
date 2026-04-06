@@ -1,6 +1,8 @@
 ---
 import { css } from "@styled-system/css"
 const { preTitle, title } = Astro.props
+
+const section = Astro.url.pathname.split("/").filter(Boolean)[0]
 ---
 
 <header>
@@ -8,18 +10,21 @@ const { preTitle, title } = Astro.props
     class={css({
       textStyle: "basicHeading1",
       layerStyle: "basicText",
-      zIndex: "-1",
       position: "relative",
       ml: "2px",
     })}
   >
     {
-      preTitle ? (
+      preTitle && (
         <>
-          <span class={css({ color: "grayFont" })}>{preTitle}</span> /
+          <a
+            href={`/${section}`}
+            class={css({ color: "grayFont", textDecoration: "none" })}
+          >
+            {preTitle}
+          </a>{" "}
+          /
         </>
-      ) : (
-        ""
       )
     }
     <span>{title}</span>
@@ -31,6 +36,9 @@ const { preTitle, title } = Astro.props
       borderTop: "1px solid black",
       bgColor: "white",
       h: "30px",
+      pointerEvents: "none",
+      position: "relative",
+      zIndex: "1",
     })}
   >
   </div>
