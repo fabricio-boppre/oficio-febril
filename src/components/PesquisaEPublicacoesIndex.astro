@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets"
 import { css } from "@styled-system/css"
+import { marked } from "marked"
 import externalLinkIcon from "@images/externalLinkIcon.svg"
 const { content } = Astro.props
 ---
@@ -37,9 +38,8 @@ const { content } = Astro.props
             class={css({
               ml: "20px",
             })}
-          >
-            {item.data.descricao}
-          </div>
+            set:html={marked.parse(item.data.descricao)}
+          />
         </li>
       )
     })

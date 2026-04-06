@@ -332,7 +332,7 @@ O campo _rascunho_ serve para que o item não apareça de imediato no site após
 
 O campo _arquivo_pdf_ é o título do arquivo PDF que você publicou na etapa anterior.
 
-O campo _descricao_ serve para exibir ao visitante um pequeno resumo ou descrição de cada item.
+O campo _descricao_ serve para exibir ao visitante um pequeno resumo ou descrição de cada item. Nesta descrição você pode utilizar formatação Markdown, por exemplo, asteriscos (\*) para itálico ou negrito.
 
 O campo _data_da_publicacao_ deve ser peenchido com a data da publicação deste conteúdo (no formato AAAA-MM-DD), que será utilizado para ordenar os itens nos índices em que eles aparecerem.
 
@@ -356,7 +356,7 @@ O campo _rascunho_ serve para que o item não apareça de imediato no site após
 
 O campo _link_externo_ é o endereço para o qual o link deve remeter (não esqueça do http:// ou https://).
 
-O campo _descricao_ serve para exibir ao visitante um pequeno resumo ou descrição de cada item.
+O campo _descricao_ serve para exibir ao visitante um pequeno resumo ou descrição de cada item. Nesta descrição você pode utilizar formatação Markdown, por exemplo, asteriscos (\*) para itálico ou negrito.
 
 O campo _data_da_publicacao_ deve ser peenchido com a data da publicação deste conteúdo (no formato AAAA-MM-DD), que será utilizado para ordenar os itens nos índices em que eles aparecerem.
 
@@ -377,7 +377,7 @@ O campo _titulo_ será o texto exibido como link para este item.
 
 O campo _rascunho_ serve para que o item não apareça de imediato no site após a sua reconstrução, para que você possa revisá-lo antes através de um link separado. Ver instruções em [Dicas gerais para a publicação de textos](#dicas-gerais).
 
-O campo _descricao_ serve para exibir ao visitante um pequeno resumo ou descrição de cada item.
+O campo _descricao_ serve para exibir ao visitante um pequeno resumo ou descrição de cada item. Nesta descrição você pode utilizar formatação Markdown, por exemplo, asteriscos (\*) para itálico ou negrito.
 
 O campo _data_da_publicacao_ deve ser peenchido com a data da publicação deste conteúdo (no formato AAAA-MM-DD), que será utilizado para ordenar os itens nos índices em que eles aparecerem.
 
