@@ -218,7 +218,7 @@ Recomenda-se remover essa legenda embutida (e, se necessário, incluir uma legen
 <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2284841090&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 ```
 
-Se for necessário acrescentar uma legenda ao som, basta seguir as mesmas instruções das legendas nos vídeos, ou seja, envolver o código do vídeo e da legenda com a tag _</igure\>_. Por exemplo:
+Se for necessário acrescentar uma legenda ao som, basta seguir as mesmas instruções das legendas nos vídeos, ou seja, envolver o código do vídeo e da legenda com a tag _</figure\>_. Por exemplo:
 
 ```
 <figure>
