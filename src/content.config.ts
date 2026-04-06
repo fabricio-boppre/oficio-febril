@@ -1,4 +1,5 @@
-import { z, reference, defineCollection } from "astro:content"
+import { reference, defineCollection } from "astro:content"
+import { z } from "astro/zod"
 import { glob, file } from "astro/loaders"
 
 const cliches = defineCollection({
