@@ -12,15 +12,15 @@
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",
     "@astrojs/sitemap": "^3.7.2",
-    "astro": "^6.1.6",
-    "astro-embed": "^0.12.0",
+    "astro": "^6.1.8",
+    "astro-embed": "^0.13.0",
     "astro-meta-tags": "^0.4.1",
     "astro-seo": "^1.1.0",
-    "marked": "^18.0.0",
+    "marked": "^18.0.2",
     "sass": "^1.99.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "^1.9.1",
+    "@pandacss/dev": "^1.10.0",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1"
   }
