@@ -117,31 +117,38 @@ const title = "Página inicial"
   >
     <section>
       <H1TitleWithLine title="Febres" />
-      <div
-        class={flex({
-          gap: ["30px", undefined, "53px"],
-          flexWrap: "wrap",
-        })}
-      >
-        {
-          destaques.map((item) => {
-            return (
-              <a
-                class={css({
-                  display: "block",
-                  w: "200px",
-                })}
-                href={"/" + item.route + "/" + item.id}
-              >
-                <Image src={item.imagem_para_indice} alt={item.titulo} />
-                <span class={css({ textStyle: "spanText" })}>
-                  {item.titulo}
-                </span>
-              </a>
-            )
-          })
-        }
-      </div>
+      {
+        destaques.length > 0 ? (
+          <div
+            class={flex({
+              gap: ["30px", undefined, "40px"],
+              flexWrap: "wrap",
+              justifyContent: "center",
+            })}
+          >
+            {destaques.map((item) => {
+              return (
+                <a
+                  class={css({
+                    display: "block",
+                    w: "200px",
+                  })}
+                  href={"/" + item.route + "/" + item.id}
+                >
+                  <Image src={item.imagem_para_indice} alt={item.titulo} />
+                  <span class={css({ textStyle: "spanText" })}>
+                    {item.titulo}
+                  </span>
+                </a>
+              )
+            })}
+          </div>
+        ) : (
+          <p class={css({ textStyle: "basicText" })}>
+            Não há nenhum item para ser exibido aqui.
+          </p>
+        )
+      }
     </section>
     <section>
       <H1TitleWithLine title="Artistas e pesquisadores" />
