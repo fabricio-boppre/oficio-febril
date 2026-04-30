@@ -31,7 +31,7 @@ export default defineConfig({
       },
       tokens: {
         sizes: {
-          maxWidth: { value: "1000px" },
+          maxWidth: { value: "960px" },
         },
         spacing: {
           headerAndFooterYMargin: { value: "20px" },

@@ -23,7 +23,7 @@ export const layerStyles = defineLayerStyles({
     description:
       "The basic styles for the menu button and list itens, so they have the same layout.",
     value: {
-      p: ["10px", undefined, undefined, "10px 30px"],
+      p: ["10px", undefined, undefined, "10px 20px"],
     },
   },
   basicText: {
