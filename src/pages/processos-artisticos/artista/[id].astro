@@ -34,11 +34,13 @@ const processosArtisticos = (
 )
 var processosArtisticosDesteartista = new Array()
 processosArtisticos.map((processo) => {
-  processo.data.artistas.map((artista) => {
-    if (artista.id == esteArtistaId) {
-      processosArtisticosDesteartista.push(processo)
-    }
-  })
+  if (processo.data.artistas) {
+    processo.data.artistas.map((artista) => {
+      if (artista.id == esteArtistaId) {
+        processosArtisticosDesteartista.push(processo)
+      }
+    })
+  }
 })
 const { Content } = await render(artista)
 const preTitle = "Processos artísticos"
