@@ -33,7 +33,7 @@ const processosArtisticos = defineCollection({
       imagem_para_indice: image(),
       descricao: z.string(),
       data_da_publicacao: z.coerce.date(),
-      artistas: z.array(reference("artistas")),
+      artistas: z.array(reference("artistas")).optional(),
     }),
 })
 

@@ -22,9 +22,11 @@ export async function getStaticPaths() {
 // For a specific processo, we get meta info, related artistas and render the content in a component called `Content`:
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const { processo } = Astro.props
-const artistas = (await getEntries(processo.data.artistas)).sort((a, b) =>
-  a.data.nome.localeCompare(b.data.nome),
-)
+const artistas = processo.data.artistas
+  ? (await getEntries(processo.data.artistas)).sort((a, b) =>
+      a.data.nome.localeCompare(b.data.nome),
+    )
+  : null
 const { Content } = await render(processo)
 const preTitle = "Processos artísticos"
 const title = processo.data.titulo
@@ -38,18 +40,22 @@ const title = processo.data.titulo
   <H1TitleWithLine preTitle={preTitle} title={title} />
   <article>
     <Content />
-    <h2>Artistas</h2>
-    <ul>
-      {
-        artistas.map((artista) => (
-          <li>
-            <a href={"/processos-artisticos/artista/" + artista.id}>
-              {artista.data.nome}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    {
+      artistas && (
+        <section>
+          <h2>Artistas</h2>
+          <ul>
+            {artistas.map((artista) => (
+              <li>
+                <a href={"/processos-artisticos/artista/" + artista.id}>
+                  {artista.data.nome}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
     <section
       class={css({
         mt: "40px",

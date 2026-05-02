@@ -296,6 +296,8 @@ O campo _data_da_publicacao_ deve ser peenchido com a data da publicação deste
 
 O campo _artistas_ serve para indicar os artistas envolvidos neste processo. Para isso, iniciando em uma nova linha, faça uma lista das _slugs_ dos artistas deste processo (um ou mais), com dois espaços antes de cada item e um traço precedendo as _slugs_, exatamente como no exemplo acima. Fazendo corretamente esta associação, o site se encarrega de exibir os artistas na tela de um processo e também de exibir os processos de um artista em sua tela.
 
+Observação: se o processo não possuir artistas envolvidos, você deve excluir completamente o campo _artistas_.
+
 Por fim, abaixo da _front matter_, insira o conteúdo de texto e imagens deste processo utilizando o formato Markdown.
 
 Para a organização e nomenclatura dos arquivos, siga as sugestões descritas [aqui](#publicando-novo-conteudo). Dicas gerais se encontram [aqui](#dicas-gerais).
